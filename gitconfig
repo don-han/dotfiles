@@ -3,3 +3,5 @@
 	name = Don Han
 [core]
 	editor = vim
+[merge]
+	tool = meld
