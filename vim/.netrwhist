@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/techrat/repo/youncherry.github.com/content'
+let g:netrw_dirhist_2='/home/techrat/repo/youncherry.github.com/output/author'
+let g:netrw_dirhist_3='/home/techrat/.vim'
