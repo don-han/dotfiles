@@ -12,9 +12,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 
-xbindkeys
-[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
-sh ~/.fehbg &
-conky | while read -r; do xsetroot -name "$REPLY"; done &
+xbindkeys   # bind shortcuts
+[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources   # config for terminal
+sh ~/.fehbg &   # set background with feh
+conky | while read -r; do xsetroot -name "$REPLY"; done &   # run conky
 # this allows dwm to restart without closing the windows
 source ~/scripts/startdwm

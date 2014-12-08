@@ -1,11 +1,11 @@
 out_to_console yes
 out_to_x no
 background no
-update_interval 2
+update_interval 1
 total_run_times 0
 use_spacer none
 times_in_seconds true
 
 # [ CPU: ${cpu cpu1}% / ${cpu cpu2}% ] [ System Load Average:  ${loadavg}} ]
 TEXT
-[ Network: ${wireless_essid wlp1s0} ] [ Uptime: ${format_time ${uptime_short} "\hh\mm"} ] [ Temp: ${acpitemp}c ] [ Battery: ${battery_short BAT1} ] [ ${time %a %b %d %I:%M%P} ] 
+[ Network: ${wireless_essid wlp1s0} ] [ Uptime: ${format_time ${uptime_short} "\hh\mm"} ] [ Volume: ${exec amixer get Master -M | grep Mono: | awk '{print $6}' } ${exec amixer get Master -M | grep Mono: | sed 's/[][]//g' | awk '{print $4}' } ] [ Battery: ${battery_short BAT1} ] [ ${time %a %b %d %I:%M%P} ] 

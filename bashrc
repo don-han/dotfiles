@@ -14,10 +14,10 @@
 
 # Bash Prompt
 # Green username 
-export PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
+#export PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
 
 # ~ >
-#export PS1='\[\033[0;36m\]\W\[\033[0;32m\]$(__git_ps1 " (%s)") \[\033[0;34m\]>\[\033[0m\] '
+export PS1='\[\033[0;36m\]\W\[\033[0;32m\]\[\033[0;34m\]>\[\033[0m\] '
 
 #### Autocomplete {{{
 #    if [ -f /etc/bash_completion ]; then
