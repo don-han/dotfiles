@@ -45,6 +45,11 @@ function sudo() {
     esac
 }
 
+# change directory and then list
+function cs() {
+    cd "$@" && ls --color=auto;
+}
+
 # SETTINGS FOR IBUS
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus

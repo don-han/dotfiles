@@ -27,3 +27,7 @@
 "google-chrome-stable"
     Shift+Alt + i
     m:0x9 + c:31
+
+"systemctl hibernate"
+    XF86Launch1
+    m:0x0 + c:156
