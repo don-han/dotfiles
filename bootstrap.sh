@@ -29,4 +29,3 @@ echo "[*] DONE"
 #rename 's/\.//' $olddir/.[^.]*
 
 source ~/.bashrc
-source ~/.vimrc
