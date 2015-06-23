@@ -4,14 +4,8 @@ alias vivim='sudo vim ~/.vimrc'
 alias vialias='sudo vim ~/.alias'
 
 alias ls='ls --color=auto'
-alias redwm='cd ~/dwm; updpkgsums; makepkg -efi --noconfirm; killall dwm'
-alias sshcs1='ssh cs61c-hm@hive1.cs.berkeley.edu'
-alias sshcs2='ssh cs61c-hm@hive2.cs.berkeley.edu'
-alias wifi='sudo wifi-menu'
 
 # PROGRAMS
-alias mars='java -jar ~/.builds/mars.jar'
-alias camera='java -jar ~/.builds/Camera.jar'
 
 # GIT
 alias add='git add'
@@ -26,8 +20,3 @@ alias checkout='git checkout'
 alias ping='ping -c 5'
 alias df='df -h'
 alias du='du -sh'
-
-# TEMP FOR CS61C
-alias a='rm tests/*.hex'
-alias b='java -jar Ida.jar -a tests/*.ida'
-alias c='java -jar Ida.jar -t'
