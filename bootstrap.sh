@@ -24,8 +24,9 @@ for FILE in $FILES; do
     ln -s $DIR/$FILE ~/.$FILE
 done
 
-echo "[*] DONE"
-
-#rename 's/\.//' $olddir/.[^.]*
+# this removes the dot from dotfiles in $olddir; to re-add dot, use prefix_dot.sh file
+rename 's/\.//' $olddir/.[^.]*
 
 source ~/.bashrc
+
+echo "[*] DONE"

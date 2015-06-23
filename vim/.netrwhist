@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/techrat/repo/youncherry.github.com/content'
-let g:netrw_dirhist_2='/home/techrat/repo/youncherry.github.com/output/author'
-let g:netrw_dirhist_3='/home/techrat/.vim'
-let g:netrw_dirhist_4='/usr/share/xsessions'
-let g:netrw_dirhist_5='/usr/lib/systemd/system'
-let g:netrw_dirhist_6='/home/don/dotfiles'
-let g:netrw_dirhist_7='/home/don/.config/fcitx/conf'

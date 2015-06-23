@@ -6,7 +6,9 @@ if [[ $# -eq 0 ]]; then
     set -- .
 fi
 
-rename -n 's/\//\/./' $1/[^.]*
+DIR=$(basename $1)
+
+rename -n 's/\//\/./' $DIR/[^.]*
 #}
 
 #prefix_dot $1

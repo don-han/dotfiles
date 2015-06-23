@@ -1,3 +1,6 @@
-vim/.netrwhist
 old_dotfiles
-*.swp
+
+vim/.netrwhist
+vim/backup/*
+vim/swap/*
+vim/undo/*
