@@ -10,7 +10,7 @@ FILES=`ls | grep -v '.sh$' | grep -v $olddir` # Do not display files that end in
 ###############################
 
 for FILE in $FILES; do
-    if [ -f ~/.$FILE ] || [ -d ~/.$FLIE ] ; then
+    if [ -e ~/.$FILE ] ; then
         if [ ! -d $olddir ]; then
             echo "[*] Creating a directory '$olddir' for backup of any existing dotfiles"
             mkdir -p $olddir
@@ -23,7 +23,7 @@ for FILE in $FILES; do
 done
 
 # this removes the dot from dotfiles in $olddir; to re-add dot, use prefix_dot.sh file
-rename -f 's/\.//' $olddir/.[^.]*
+#rename -f 's/\.//' $olddir/.[^.]*
 
 mkdir -p ~/.vim/{backup,swap,undo} # setup vimrc
 
