@@ -1,9 +1,11 @@
 ## ALIAS SETTINGS ##
+alias sobash='source ~/.bashrc'
+
 alias vibash='sudo vim ~/.bashrc'
 alias vivim='sudo vim ~/.vimrc'
-alias vialias='sudo vim ~/.alias'
+alias vial='sudo vim ~/.bash_aliases'
 
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
 
 # PROGRAMS
 
