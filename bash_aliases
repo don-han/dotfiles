@@ -7,11 +7,12 @@ alias vial='sudo vim ~/.bash_aliases'
 
 #alias ls='ls --color=auto'
 
-# PROGRAMS
+alias tmux='tmux -2'        # allows 256 colors for vim to work in tmux
 
 # GIT
+alias g='git'
 alias add='git add'
-alias commit='git commit -am '
+alias commit='git commit'
 alias push='git push origin'
 alias pull='git pull origin'
 alias st='git status'
