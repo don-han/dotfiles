@@ -21,3 +21,12 @@ alias checkout='git checkout'
 alias ping='ping -c 5'
 alias df='df -h'
 alias du='du -sh'
+
+alias v='vim'
+
+# Trash
+alias mktrash='mkdir -p ~/.Trash'
+alias trash='mktrash; mv -t ~/.Trash'
+alias t='trash'
+alias trash-empty='mktrash; rm -r ~/.Trash'
+alias trash-list='mktrash; ls -a ~/.Trash'
