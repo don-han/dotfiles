@@ -1,6 +1,6 @@
 set nocompatible
 set t_Co=256
-" colors xoria256
+colors xoria256
 
 set nu
 set tabstop=4
@@ -9,7 +9,12 @@ set expandtab
 set nocindent
 set autoindent
 set incsearch
-set hlsearch
+
+set hlsearch                " highlights all that matches
+"nnoremap <silent> <Space>nohlsearch<Bar>echo<CR>
+" useful for long wrapped lines
+"nnoremap k gk               
+"nnoremap j gj
 
 " allows sane copy and paste behavior
 set clipboard=unnamed
