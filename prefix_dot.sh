@@ -8,7 +8,7 @@ fi
 
 DIR=$(basename $1)
 
-rename -n 's/\//\/./' $DIR/[^.]*
+echo rename -n 's/\//\/./' $DIR/[^.]*
 #}
 
 #prefix_dot $1
