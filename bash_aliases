@@ -1,11 +1,12 @@
 ## ALIAS SETTINGS ##
 alias sobash='source ~/.bashrc'
 
-alias vibash='sudo vim ~/.bashrc'
-alias vivim='sudo vim ~/.vimrc'
-alias vial='sudo vim ~/.bash_aliases'
+alias vibash='vim ~/.bashrc'
+alias vivim='vim ~/.vimrc'
+alias vial='vim ~/.bash_aliases'
 
-#alias ls='ls --color=auto'
+alias ls='ls -GF'
+#--color=auto'
 
 alias tmux='tmux -2'        # allows 256 colors for vim to work in tmux
 
@@ -30,3 +31,8 @@ alias trash='mktrash; mv -t ~/.Trash'
 alias t='trash'
 alias trash-empty='mktrash; rm -r ~/.Trash'
 alias trash-list='mktrash; ls -A ~/.Trash'
+
+
+# FOR OS X #
+alias soprof='source ~/.bash_profile'
+alias viprof='vim ~/.bash_profile'
