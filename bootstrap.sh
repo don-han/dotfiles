@@ -1,4 +1,5 @@
 #! /bin/bash
+# TODO: find out why VIM/ gets nested 
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 
 ########## Variables ########## 

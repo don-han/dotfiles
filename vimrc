@@ -2,15 +2,28 @@ set nocompatible
 set t_Co=256
 colors xoria256
 
-set nu
+set number
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set nocindent
 set autoindent
-set incsearch
+
+set scrolloff=3
+"set sidescroll=15
+set sidescroll=1
+
+set wildmenu
+set showcmd
+
+set wrap
+set linebreak
 
 set hlsearch                " highlights all that matches
+set incsearch
+set ignorecase
+
+set ttyfast
 "nnoremap <silent> <Space>nohlsearch<Bar>echo<CR>
 " useful for long wrapped lines
 "nnoremap k gk               
@@ -33,5 +46,18 @@ set undoreload=10000        " number of lines to save for undo
 set laststatus=2
 set statusline=%F           " shows full path
 
+set cursorline
+set mouse=a
+set noerrorbells
+
+set ruler
+set title
+
+
 filetype indent plugin on
 syntax enable
+
+call plug#begin('~/.vim/plugged')
+Plug 'kien/ctrlp.vim'
+call plug#end()
+
