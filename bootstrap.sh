@@ -26,7 +26,7 @@ done
 # this removes the dot from dotfiles in $olddir; to re-add dot, use prefix_dot.sh file
 #rename -f 's/\.//' $olddir/.[^.]*
 
-mkdir -p ~/.vim/{backup,swap,undo} # setup vimrc
+#mkdir -p ~/.vim/{backup,swap,undo} # setup vimrc
 
 source ~/.bashrc
 

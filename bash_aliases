@@ -8,6 +8,8 @@ alias vial='vim ~/.bash_aliases'
 alias ls='ls -GF'
 #--color=auto'
 
+alias hidden='ls -ld .*'
+
 alias tmux='tmux -2'        # allows 256 colors for vim to work in tmux
 
 # GIT
@@ -30,7 +32,6 @@ alias trash='mktrash; mv -t ~/.Trash'
 alias t='trash'
 alias trash-empty='mktrash; rm -r ~/.Trash'
 alias trash-list='mktrash; ls -A ~/.Trash'
-
 
 # FOR OS X #
 alias soprof='source ~/.bash_profile'

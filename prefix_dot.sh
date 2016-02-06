@@ -1,4 +1,5 @@
 #! /bin/bash
+# prefix every file with a dot
 
 #prefix_dot(){
 if [[ $# -eq 0 ]]; then
