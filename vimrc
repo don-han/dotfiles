@@ -1,6 +1,6 @@
 set nocompatible
 set t_Co=256
-colors xoria256
+" colors xoria256
 
 set number
 set tabstop=4
@@ -10,7 +10,7 @@ set nocindent
 set autoindent
 
 set scrolloff=3
-"set sidescroll=15
+" set sidescroll=15
 set sidescroll=1
 
 set wildmenu
@@ -19,15 +19,16 @@ set showcmd
 set wrap
 set linebreak
 
-set hlsearch                " highlights all that matches
+" highlights all that matches
+set hlsearch                
 set incsearch
 set ignorecase
 
 set ttyfast
-"nnoremap <silent> <Space>nohlsearch<Bar>echo<CR>
+" nnoremap <silent> <Space>nohlsearch<Bar>echo<CR>
 " useful for long wrapped lines
-"nnoremap k gk               
-"nnoremap j gj
+" nnoremap k gk               
+" nnoremap j gj
 
 " allows sane copy and paste behavior
 set clipboard=unnamed
@@ -58,6 +59,7 @@ filetype indent plugin on
 syntax enable
 
 call plug#begin('~/.vim/plugged')
+Plug 'vim-latex/vim-latex'
 Plug 'kien/ctrlp.vim'
 call plug#end()
 

@@ -19,7 +19,6 @@ alias branch='git branch'
 alias checkout='git checkout'
 
 # General
-alias ping='ping -c 5'
 alias df='df -h'
 alias du='du -sh'
 
@@ -36,3 +35,6 @@ alias trash-list='mktrash; ls -A ~/.Trash'
 # FOR OS X #
 alias soprof='source ~/.bash_profile'
 alias viprof='vim ~/.bash_profile'
+
+# VERCON #
+alias vc='bash ~/repo/vercon/vercon.sh'

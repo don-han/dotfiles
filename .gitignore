@@ -1,5 +1,7 @@
 old_dotfiles
 
+*.local
+
 vim/.netrwhist
 vim/backup/*
 vim/swap/*
