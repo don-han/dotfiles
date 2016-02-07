@@ -1,6 +1,5 @@
 #! /bin/bash
-# TODO: find out why VIM/ gets nested 
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
+# This script creates symlinks of the files in dotfiles/ to the home directory
 
 ########## Variables ########## 
 
@@ -29,7 +28,7 @@ for FILE in $FILES; do
     elif [ -e ~/.$FILE ]; then
         echo "[*] Backing up '$FILE' to the '$olddir'"
 
-        # weird behavior for mv when moving directory
+        # weird behavior for mv when moving directory (tries to rename instead of moving)
         # if directory
         if [ -d ~/.$FILE ]; then
             rm -rf $olddir/.$FILE
