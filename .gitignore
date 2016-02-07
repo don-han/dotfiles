@@ -1,9 +1,10 @@
 old_dotfiles
 
-*.local
+# DOTFILES 
+dotfiles/*.local
 
-vim/.netrwhist
-vim/backup/*
-vim/swap/*
-vim/undo/*
-vim/vim
+dotfiles/vim/.netrwhist
+dotfiles/vim/backup/*
+dotfiles/vim/swap/*
+dotfiles/vim/undo/*
+dotfiles/vim/vim
