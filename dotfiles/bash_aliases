@@ -5,7 +5,9 @@ alias vibash='vim ~/.bashrc'
 alias vivim='vim ~/.vimrc'
 alias vial='vim ~/.bash_aliases'
 
-alias ls='ls -GF'
+alias vidot='vim ~/repo/dotfiles/dotfiles'
+
+alias ls='ls -GFh'
 #--color=auto'
 
 alias hidden='ls -ld .*'
@@ -36,6 +38,9 @@ alias trash-list='mktrash; ls -A ~/.Trash'
 # FOR OS X #
 alias soprof='source ~/.bash_profile'
 alias viprof='vim ~/.bash_profile'
+
+# gitit
+alias gi='cd ~/wiki && gitit'
 
 # VERCON #
 alias vc='bash ~/repo/vercon/vercon.sh'
