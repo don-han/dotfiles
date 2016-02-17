@@ -15,6 +15,11 @@ FILES=`ls $DIR`
 
 ###############################
 for FILE in $FILES; do
+    if diff -rq $DIR/$FILE ~/.$FILE > /dev/null ; then
+        echo "[*] '$FILE' has not been changed. Skipping ..."
+        continue
+    fi
+
     if [ ! -d $olddir ]; then
         echo "[*] Creating a directory '$olddir' for backup of any existing dotfiles"
         mkdir -p $olddir
@@ -24,27 +29,32 @@ for FILE in $FILES; do
     if [ -L ~/.$FILE ]; then
         echo "[*] Removing old symlink of '$FILE'"
         unlink ~/.$FILE
-    # if file or directory
+        # if file or directory
     elif [ -e ~/.$FILE ]; then
         echo "[*] Backing up '$FILE' to the '$olddir'"
 
         # weird behavior for mv when moving directory (tries to rename instead of moving)
         # if directory
         if [ -d ~/.$FILE ]; then
-            rm -rf $olddir/.$FILE
+            cp -R ~/.$FILE $olddir
+            rm -rf -- ~/.$FILE
         fi
         mv ~/.$FILE $olddir
     fi
 
     echo "[*] Creating symlink to $FILE in home directory."
     ln -s $DIR/$FILE ~/.$FILE
-done
+done 
+
+# setup vimrc
+mkdir -p ~/.vim/{backup,swap,undo} 
+
+# activate new dotiles
+source ~/.bashrc
+
+echo "[*] DONE"
+exit
 
 # this removes the dot from dotfiles in $olddir; to re-add dot, use prefix_dot.sh file
 rename -f 's/\.//' $olddir/.[^.]*
 
-mkdir -p ~/.vim/{backup,swap,undo} # setup vimrc
-
-source ~/.bashrc
-
-echo "[*] DONE"
