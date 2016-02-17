@@ -14,35 +14,40 @@ FILES=`ls $DIR`
 #FILES=`ls $DIR | grep -v '.sh$' | grep -v $olddir` # Do not display files that end in .sh or $olddir
 
 ###############################
+
+if [ ! -d $olddir ]; then
+    echo "[*] Creating a directory '$olddir' for backup of any existing dotfiles"
+    mkdir -p $olddir
+fi
+
 for FILE in $FILES; do
-    if diff -rq $DIR/$FILE ~/.$FILE > /dev/null ; then
-        echo "[*] '$FILE' has not been changed. Skipping ..."
+    echo "[*] Processing '$FILE' ... "
+    if  [ -L ~/."$FILE" ] && diff -rq $DIR/$FILE ~/.$FILE > /dev/null ; then
+        echo "[-] Symlink '$FILE' has not been changed. Skipping ..."
         continue
     fi
-
-    if [ ! -d $olddir ]; then
-        echo "[*] Creating a directory '$olddir' for backup of any existing dotfiles"
-        mkdir -p $olddir
-    fi
+    echo "[-] Syncing $FILE"
 
     # if symlink
     if [ -L ~/.$FILE ]; then
-        echo "[*] Removing old symlink of '$FILE'"
+        echo "[-] Removing old symlink of '$FILE'"
         unlink ~/.$FILE
         # if file or directory
     elif [ -e ~/.$FILE ]; then
-        echo "[*] Backing up '$FILE' to the '$olddir'"
+        echo "[-] Backing up '$FILE' to the '$olddir'"
 
         # weird behavior for mv when moving directory (tries to rename instead of moving)
         # if directory
         if [ -d ~/.$FILE ]; then
             cp -R ~/.$FILE $olddir
             rm -rf -- ~/.$FILE
+        # if file
+        else 
+            mv ~/.$FILE $olddir
         fi
-        mv ~/.$FILE $olddir
     fi
 
-    echo "[*] Creating symlink to $FILE in home directory."
+    echo "[-] Creating symlink to $FILE in home directory."
     ln -s $DIR/$FILE ~/.$FILE
 done 
 
