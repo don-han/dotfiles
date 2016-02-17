@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 # This script creates symlinks of the files in dotfiles/ to the home directory
 
 ########## Variables ########## 
