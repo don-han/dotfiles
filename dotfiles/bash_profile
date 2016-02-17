@@ -4,15 +4,18 @@
 [[ -f ~/.bash_aliases.local ]] && source ~/.bash_aliases.local
 
 
+# terminal customization
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 #export LSCOLORS=GxFxCxDxBxegedabagaced
-alias ls='ls -GFh'
+
+# set default text editor
+export EDITOR=vim
+export VISUAL="$EDITOR"
 
 # for gitit
 export PATH="$HOME/Library/Haskell/bin:$PATH"
-
 
 # added by Anaconda2 2.4.1 installer
 export PATH="/Users/donhan/anaconda/bin:$PATH"
