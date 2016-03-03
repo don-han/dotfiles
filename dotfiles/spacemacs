@@ -3,7 +3,7 @@
 ;; It must be stored in your home directory.
 
 ;; Modularize custom variables
-(setq custom-file "~/.emacs.d/.emacs-custom.el")
+(setq custom-file "~/.emacs.d/private/.emacs-custom.el")
 
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration."
@@ -20,21 +20,23 @@
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+
      (auto-completion :variables
                    auto-completion-return-key-behavior 'complete
                    auto-completion-tab-key-behavior 'cycle
                    auto-completion-complete-with-key-sequence nil)
-
      better-defaults
      emacs-lisp
-     ;; git
+     git
      markdown
-     ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     org
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
+     spell-checking
      syntax-checking
      version-control
+
      (latex :variables latex-enable-auto-fill t)
      themes-megapack
      python
@@ -78,13 +80,13 @@ before layers configuration."
    ;; with 2 themes variants, one dark and one light)
 
    dotspacemacs-themes '(
-                         solarized-light
-                         zenburn
-                         ;;solarized-dark
                          ;;spacemacs-light
                          ;;spacemacs-dark
+                         solarized-light
+                         ;;solarized-dark
                          ;;leuven
                          ;;monokai
+                         zenburn
                          )
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -166,17 +168,30 @@ before layers configuration."
    ;; Not used for now.
    dotspacemacs-default-package-repository nil
    )
-  ;; User initialization goes here
-  )
-
-(defun dotspacemacs/config ()
-  "Configuration function.
- This function is called at the very end of Spacemacs initialization after
-layers configuration."
-  (add-hook 'doc-view-mode-hook 'auto-revert-mode)
-  (add-hook 'prog-mode-hook #'linum-mode)
-  (add-hook 'prog-mode-hook #'linum-relative-toggle)
 )
+
+(defun dotspacemacs/user-init ()
+  "Initialization function for user code.
+It is called immediately after `dotspacemacs/init'.  You are free to put almost
+any user code here.  The exception is org related code, which should be placed
+in `dotspacemacs/user-config'."
+)
+
+(defun dotspacemacs/user-config ()
+  "Configuration function for user code.
+This function is called at the very end of Spacemacs initialization after
+layers configuration. You are free to put any user code."
+
+  ;; Used by LaTeX layer to perform full-document previews
+  (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+
+  ;; Reserved prefix command for user : SPC o and SPC m o
+  (spacemacs/set-leader-keys "oc" 'org-capture)
+  (progn
+      ;;(setq tab-width 4)
+      ;;(setq indent-tabs-mode nil)
+    )
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
