@@ -261,11 +261,9 @@ layers configuration. You are free to put any user code."
 
 
   ;; org-mode
+  (setq org-directory (file-name-as-directory "~/Dropbox/org"))
+  (setq org-gpd-file (concat org-directory "gpd.org"))
   (with-eval-after-load 'org
-    (setq org-directory (file-name-as-directory "~/Dropbox/org"))
-    (setq org-gpd-file (concat org-directory "gpd.org"))
-    ;;(expand-file-name (concat org-directory "/gpd.org"))
-                                        ;(concat org-directory "/gpd.org")
     ;; set agenda files
     (setq org-agenda-files (quote ("~/Dropbox/org/gpd.org")))
     ;; set destination for org-capture
@@ -287,13 +285,18 @@ layers configuration. You are free to put any user code."
     (interactive)
     (find-file org-gpd-file))
 
+  (defun find-til-file()
+    (interactive)
+    (find-file (concat org-directory "til.md")))
 
+  
   ;; Used by LaTeX layer to perform full-document previews
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
   ;; Reserved prefix command for user : SPC o and SPC m o
   (spacemacs/set-leader-keys "oc" 'org-capture)
-  (spacemacs/set-leader-keys "og" 'find-gpd-file)
+  (spacemacs/set-leader-keys "ofg" 'find-gpd-file)
+  (spacemacs/set-leader-keys "oft" 'find-til-file)
   (spacemacs/set-leader-keys "ot" 'org-todo-list)
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "or" 'org-clock-report)
 
