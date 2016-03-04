@@ -258,8 +258,10 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-
-
+  ;; hard-wrap (wrap by letters)
+  ;(spacemacs/toggle-truncate-lines-off)
+  ;; soft-wrap (wrap by words)
+  (global-visual-line-mode t)
   ;; org-mode
   (setq org-directory (file-name-as-directory "~/Dropbox/org"))
   (setq org-gpd-file (concat org-directory "gpd.org"))
