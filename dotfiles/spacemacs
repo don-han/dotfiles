@@ -259,29 +259,44 @@ in `dotspacemacs/user-config'."
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
 
-  ;; org-mode
-  (setq org-directory "~/Dropbox/org")
-  ;;(expand-file-name (concat org-directory "/gpd.org"))
-  ;(concat org-directory "/gpd.org")
-  ;; set agenda files
-  (setq org-agenda-files (quote ("~/Dropbox/org/gpd.org")))
-  ;; set destination for org-capture
-  (setq org-default-notes-file "~/Dropbox/org/gpd.org")
 
-  ;; turn off line number for org-mode
-  (add-hook 'org-mode-hook 'spacemacs/toggle-line-numbers-off)
+  ;; org-mode
+  (with-eval-after-load 'org
+    (setq org-directory (file-name-as-directory "~/Dropbox/org"))
+    (setq org-gpd-file (concat org-directory "gpd.org"))
+    ;;(expand-file-name (concat org-directory "/gpd.org"))
+                                        ;(concat org-directory "/gpd.org")
+    ;; set agenda files
+    (setq org-agenda-files (quote ("~/Dropbox/org/gpd.org")))
+    ;; set destination for org-capture
+    (setq org-default-notes-file "~/Dropbox/org/gpd.org")
+    (setq org-capture-templates
+          '(
+            ("c" "Capture to collection bucket"
+             entry (file+headline org-gpd-file "Inbox")
+             "**  %?\n %U ")
+            ))
+    ;; Start from insert state at capture-mode instead of normal state
+    (add-hook 'org-capture-mode-hook 'evil-insert-state)
+    ;; Turn off line number for org-mode
+    (add-hook 'org-mode-hook 'spacemacs/toggle-line-numbers-off)
+    )
+
+  ;; Custom functions
+  (defun find-gpd-file()
+    (interactive)
+    (find-file org-gpd-file))
+
 
   ;; Used by LaTeX layer to perform full-document previews
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+
   ;; Reserved prefix command for user : SPC o and SPC m o
   (spacemacs/set-leader-keys "oc" 'org-capture)
+  (spacemacs/set-leader-keys "og" 'find-gpd-file)
+  (spacemacs/set-leader-keys "ot" 'org-todo-list)
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "or" 'org-clock-report)
-  
 
-  (progn
-    ;;(setq tab-width 4)
-    ;;(setq indent-tabs-mode nil)
-    )
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
