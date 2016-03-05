@@ -266,16 +266,33 @@ layers configuration. You are free to put any user code."
   (setq org-directory (file-name-as-directory "~/Dropbox/org"))
   (setq org-gpd-file (concat org-directory "gpd.org"))
   (with-eval-after-load 'org
-    ;; set agenda files
+    ;; Set agenda files
     (setq org-agenda-files (quote ("~/Dropbox/org/gpd.org")))
-    ;; set destination for org-capture
+    ;; Set destination for org-capture
     (setq org-default-notes-file "~/Dropbox/org/gpd.org")
+
     (setq org-capture-templates
           '(
             ("c" "Capture to collection bucket"
              entry (file+headline org-gpd-file "Inbox")
              "**  %?\n %U ")
             ))
+
+    ;(setq org-agenda-prefix-format '((agenda . " %i %-12:c%?-12t% s")
+    ;                                 (timeline . "  % s")
+    ;                                 (todo .
+    ;                                       " %i %(concat \"[ \"(org-format-outline-path (org-get-outline-path)) \" ]\") ")
+    ;                                 (tags .
+    ;                                       " %i %(concat \"[ \"(org-format-outline-path (org-get-outline-path)) \" ]\") ")
+    ;                                 (search . " %i %-12:c"))
+    ;      )
+
+    (setq org-agenda-custom-commands
+          '(("g" . "Getting Pomodoros Done")
+            ("gi" "Inbox" tags "+CATEGORY=\"Inbox\"")
+            ("gt" "Todo" todo "TODO"
+             ((org-agenda-prefix-format " %i %(concat \"[ \"(org-format-outline-path (org-get-outline-path)) \" ]\") ")))
+                                       ))
     ;; Start from insert state at capture-mode instead of normal state
     (add-hook 'org-capture-mode-hook 'evil-insert-state)
     ;; Turn off line number for org-mode
@@ -291,7 +308,6 @@ layers configuration. You are free to put any user code."
     (interactive)
     (find-file (concat org-directory "til.md")))
 
-  
   ;; Used by LaTeX layer to perform full-document previews
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
