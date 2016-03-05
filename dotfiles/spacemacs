@@ -241,7 +241,7 @@ values."
    dotspacemacs-default-package-repository nil
    ;; Delete whitespace while saving buffer. Possible values are `all'
    ;; to aggressively delete empty line and long sequences of whitespace,
-   ;; `trailing' to delete only the whitespace at end of lines, `changed'to
+   ;; `trailing' to delete only the whitespace at end of lines, `changed' to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
@@ -270,6 +270,10 @@ layers configuration. You are free to put any user code."
     (setq org-agenda-files (quote ("~/Dropbox/org/gpd.org")))
     ;; Set destination for org-capture
     (setq org-default-notes-file "~/Dropbox/org/gpd.org")
+
+    (setq org-agenda-start-day "-1d")
+    (setq org-agenda-span 7)
+    (setq org-agenda-start-on-weekday nil)
 
     (setq org-capture-templates
           '(
