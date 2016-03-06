@@ -278,11 +278,18 @@ layers configuration. You are free to put any user code."
     (setq org-agenda-span 7)
     (setq org-agenda-start-on-weekday nil)
 
+    (setq org-refile-targets
+          '((org-agenda-files :maxlevel . 2)))
+
     (setq org-capture-templates
           '(
-            ("c" "Capture to collection bucket"
+            ("c" "Capture anything to Inbox"
              entry (file+headline org-gpd-file "Inbox")
              "**  %?\n %U ")
+
+            ("n" "Capture notes to Notes in Reference"
+             entry (file+headline org-gpd-file "Notes")
+             "** %?\n %U ")
             ))
 
     ;(setq org-agenda-prefix-format '((agenda . " %i %-12:c%?-12t% s")
