@@ -303,9 +303,11 @@ layers configuration. You are free to put any user code."
 
     (setq org-agenda-custom-commands
           '(("g" . "Getting Pomodoros Done")
-            ("gi" "Inbox" tags "+CATEGORY=\"Inbox\"")
+            ("ga" "Agenda" agenda ""
+             ((org-agenda-prefix-format " %i %?-12t% s")))
             ("gt" "Todo" todo "TODO"
-             ((org-agenda-prefix-format " %i %(concat \"[ \"(org-format-outline-path (org-get-outline-path)) \" ]\") ")))
+             (;(org-agenda-todo-ignore-schedule 'future) not working for some reason
+              (org-agenda-prefix-format " %i %(concat \"[ \"(org-format-outline-path (org-get-outline-path)) \" ]\") ")))
                                        ))
     ;; Start from insert state at capture-mode instead of normal state
     (add-hook 'org-capture-mode-hook 'evil-insert-state)
@@ -325,15 +327,22 @@ layers configuration. You are free to put any user code."
     (interactive)
     (find-file (concat org-directory "til.md")))
 
-  (defun gpd-todo-list()
+  (defun custom-gpd-todo()
     (interactive)
     (org-agenda nil "gt"))
 
+  (defun custom-gpd-agenda()
+    (interactive)
+    (org-agenda nil "ga"))
+
   ;; Reserved prefix command for user : SPC o and SPC m o
+  (spacemacs/set-leader-keys "oM" 'spacemacs/toggle-maximize-frame)
+
   (spacemacs/set-leader-keys "oc" 'org-capture)
   (spacemacs/set-leader-keys "ofg" 'find-gpd-file)
   (spacemacs/set-leader-keys "oft" 'find-til-file)
-  (spacemacs/set-leader-keys "ot" 'gpd-todo-list)
+  (spacemacs/set-leader-keys "ot" 'custom-gpd-todo)
+  (spacemacs/set-leader-keys "oa" 'custom-gpd-agenda)
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "or" 'org-clock-report)
 
 )
