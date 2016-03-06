@@ -258,10 +258,13 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+
   ;; hard-wrap (wrap by letters)
   ;(spacemacs/toggle-truncate-lines-off)
+
   ;; soft-wrap (wrap by words)
   (global-visual-line-mode t)
+
   ;; org-mode
   (setq org-directory (file-name-as-directory "~/Dropbox/org"))
   (setq org-gpd-file (concat org-directory "gpd.org"))
@@ -302,6 +305,9 @@ layers configuration. You are free to put any user code."
     ;; Turn off line number for org-mode
     (add-hook 'org-mode-hook 'spacemacs/toggle-line-numbers-off)
     )
+
+  ;; Used by LaTeX layer to perform full-document previews
+  (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
   ;; Custom functions
   (defun find-gpd-file()
