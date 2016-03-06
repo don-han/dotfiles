@@ -318,14 +318,15 @@ layers configuration. You are free to put any user code."
     (interactive)
     (find-file (concat org-directory "til.md")))
 
-  ;; Used by LaTeX layer to perform full-document previews
-  (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+  (defun gpd-todo-list()
+    (interactive)
+    (org-agenda nil "gt"))
 
   ;; Reserved prefix command for user : SPC o and SPC m o
   (spacemacs/set-leader-keys "oc" 'org-capture)
   (spacemacs/set-leader-keys "ofg" 'find-gpd-file)
   (spacemacs/set-leader-keys "oft" 'find-til-file)
-  (spacemacs/set-leader-keys "ot" 'org-todo-list)
+  (spacemacs/set-leader-keys "ot" 'gpd-todo-list)
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "or" 'org-clock-report)
 
 )
