@@ -322,19 +322,19 @@ layers configuration. You are free to put any user code."
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
   ;; Custom functions
-  (defun find-gpd-file()
+  (defun don-han/find-gpd-file()
     (interactive)
     (find-file org-gpd-file))
 
-  (defun find-til-file()
+  (defun don-han/find-til-file()
     (interactive)
     (find-file (concat org-directory "til.md")))
 
-  (defun custom-gpd-todo()
+  (defun don-han/custom-gpd-todo()
     (interactive)
     (org-agenda nil "gt"))
 
-  (defun custom-gpd-agenda()
+  (defun don-han/custom-gpd-agenda()
     (interactive)
     (org-agenda nil "ga"))
 
@@ -342,10 +342,11 @@ layers configuration. You are free to put any user code."
   (spacemacs/set-leader-keys "oM" 'spacemacs/toggle-maximize-frame)
 
   (spacemacs/set-leader-keys "oc" 'org-capture)
-  (spacemacs/set-leader-keys "ofg" 'find-gpd-file)
-  (spacemacs/set-leader-keys "oft" 'find-til-file)
-  (spacemacs/set-leader-keys "ot" 'custom-gpd-todo)
-  (spacemacs/set-leader-keys "oa" 'custom-gpd-agenda)
+  (spacemacs/set-leader-keys "og" 'org-clock-goto)
+  (spacemacs/set-leader-keys "ofg" 'don-han/find-gpd-file)
+  (spacemacs/set-leader-keys "oft" 'don-han/find-til-file)
+  (spacemacs/set-leader-keys "ot" 'don-han/custom-gpd-todo)
+  (spacemacs/set-leader-keys "oa" 'don-han/custom-gpd-agenda)
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "or" 'org-clock-report)
 
 )
