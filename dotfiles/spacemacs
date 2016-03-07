@@ -288,7 +288,7 @@ layers configuration. You are free to put any user code."
           '(
             ("c" "Capture anything to Inbox"
              entry (file+headline org-gpd-file "Inbox")
-             "**  %?\n %U ")
+             "**  %?\nAdded: %U ")
 
             ("n" "Capture notes to Notes in Reference"
              entry (file+headline org-gpd-file "Notes")
