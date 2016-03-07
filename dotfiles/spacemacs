@@ -274,6 +274,9 @@ layers configuration. You are free to put any user code."
     ;; Set destination for org-capture
     (setq org-default-notes-file "~/Dropbox/org/gpd.org")
 
+    ;; State change with S will not log timestamps or notes - good for fixing todo states
+    (setq org-treat-S-cursor-todo-selection-as-state-change nil)
+
     (setq org-agenda-start-day "-1d")
     (setq org-agenda-span 7)
     (setq org-agenda-start-on-weekday nil)
