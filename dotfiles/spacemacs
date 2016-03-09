@@ -288,11 +288,15 @@ layers configuration. You are free to put any user code."
           '(
             ("c" "Capture anything to Inbox"
              entry (file+headline org-gpd-file "Inbox")
-             "**  %?\nAdded: %U ")
+             "** %?\nAdded: %U ")
 
-            ("n" "Capture notes to Notes in Reference"
-             entry (file+headline org-gpd-file "Notes")
-             "** %?\n %U ")
+            ("p" "Create a project"
+             entry (file+headline org-gpd-file "Projects")
+             "**  %?\n*** Desired outcome:\n*** Project plans\n*** Project support materials        :ARCHIVE: ")
+            ;; collect and then process
+            ;("n" "Capture notes to Notes in Reference"
+            ; entry (file+headline org-gpd-file "Notes")
+            ; "** %?\n %U ")
             ))
 
     ;(setq org-agenda-prefix-format '((agenda . " %i %-12:c%?-12t% s")
