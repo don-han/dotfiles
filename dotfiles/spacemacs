@@ -353,6 +353,7 @@ layers configuration. You are free to put any user code."
 
   (defun don-han/inbox-goto()
     (interactive)
+    (require 'org-capture)
     (org-capture-goto-target "c"))
   ;; Reserved prefix command for user : SPC o and SPC m o
   (spacemacs/set-leader-keys "oM" 'spacemacs/toggle-maximize-frame)
