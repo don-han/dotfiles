@@ -315,7 +315,12 @@ layers configuration. You are free to put any user code."
             ("gt" "Todo" todo "TODO"
              (;(org-agenda-todo-ignore-schedule 'future) not working for some reason
               (org-agenda-prefix-format " %i %(concat \"[ \"(org-format-outline-path (org-get-outline-path)) \" ]\") ")))
-                                       ))
+            ("gd" "Daily Action List" agenda ""
+             ((org-agenda-ndays 1)
+              (org-agenda-sorting-strategy (quote ((agenda time-up priority-down tag-up) )))
+              (org-deadline-warning-days 0)))
+            ))
+
     ;; Start from insert state at capture-mode instead of normal state
     (add-hook 'org-capture-mode-hook 'evil-insert-state)
     ;; Turn off line number for org-mode
