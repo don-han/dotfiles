@@ -338,11 +338,19 @@ layers configuration. You are free to put any user code."
     (interactive)
     (org-agenda nil "ga"))
 
+  (defun don-han/custom-capture()
+    (interactive)
+    (org-capture nil "c"))
+
+  (defun don-han/inbox-goto()
+    (interactive)
+    (org-capture-goto-target "c"))
   ;; Reserved prefix command for user : SPC o and SPC m o
   (spacemacs/set-leader-keys "oM" 'spacemacs/toggle-maximize-frame)
 
-  (spacemacs/set-leader-keys "oc" 'org-capture)
-  (spacemacs/set-leader-keys "og" 'org-clock-goto)
+  (spacemacs/set-leader-keys "oc" 'don-han/custom-capture)
+  (spacemacs/set-leader-keys "ogc" 'org-clock-goto)
+  (spacemacs/set-leader-keys "ogi" 'don-han/inbox-goto)
   (spacemacs/set-leader-keys "ofg" 'don-han/find-gpd-file)
   (spacemacs/set-leader-keys "oft" 'don-han/find-til-file)
   (spacemacs/set-leader-keys "ot" 'don-han/custom-gpd-todo)
