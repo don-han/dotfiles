@@ -298,8 +298,8 @@ layers configuration. You are free to put any user code."
     (setq org-capture-templates
           '(
             ("c" "Capture anything to Inbox"
-             entry (file+headline org-gpd-file "Inbox")
-             "** %?\nAdded: %U ")
+             entry (file+headline org-gtd-file "Inbox")
+             "* %?\nAdded: %U ")
 
             ("p" "Create a project"
              entry (file+headline org-gpd-file "Projects")
