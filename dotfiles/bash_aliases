@@ -16,7 +16,7 @@ alias tmux='tmux -2'        # allows 256 colors for vim to work in tmux
 
 # notes
 alias n='vim ~/Dropbox/.notes'
-alias notes='cd ~/Dropbox/note-files/'
+alias notes='cd ~/Dropbox/notes/'
 
 # GIT
 alias g='git'
