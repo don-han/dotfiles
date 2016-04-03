@@ -326,16 +326,19 @@ layers configuration. You are free to put any user code."
     ;      )
 
     (setq org-agenda-custom-commands
-          '(("g" . "Getting Pomodoros Done")
+          '(
+            ("g" . "Getting Pomodoros Done")
             ("ga" "Agenda" agenda ""
              ((org-agenda-prefix-format " %i %?-12t% s")))
             ("gt" "Todo" todo "TODO"
              (;(org-agenda-todo-ignore-schedule 'future) not working for some reason
-              (org-agenda-prefix-format " %i %(concat \"[ \"(org-format-outline-path (org-get-outline-path)) \" ]\") ")))
+              (org-agenda-prefix-format " %i %?-12(concat \"[ \"(org-format-outline-path (list (nth 1 (org-get-outline-path)))) \" ]\") ")))
+
             ("gd" "Daily Action List" agenda ""
              ((org-agenda-ndays 1)
               (org-agenda-sorting-strategy (quote ((agenda time-up priority-down tag-up) )))
               (org-deadline-warning-days 0)))
+
             ("r" "Review"
              ((agenda "")
               (alltodo ""))
