@@ -290,6 +290,9 @@ layers configuration. You are free to put any user code."
     ;; Prevent an automatic newline when creating an item
     (setq org-blank-before-new-entry (quote ((heading)(plain-list-item))))
 
+    ;; Handles invisible editing
+    (setq org-catch-invisible-edits 'show-and-error)
+
     (setq org-agenda-start-day "-1d")
     (setq org-agenda-span 7)
     (setq org-agenda-start-on-weekday nil)
