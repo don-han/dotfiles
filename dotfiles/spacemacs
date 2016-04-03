@@ -267,13 +267,20 @@ layers configuration. You are free to put any user code."
   (global-visual-line-mode t)
 
   ;; org-mode
-  (setq org-directory (file-name-as-directory "~/Dropbox/org"))
-  (setq org-gpd-file (concat org-directory "gpd.org"))
+  (setq org-directory (file-name-as-directory "~/Dropbox/org/"))
+  (setq gtd-directory (file-name-as-directory "~/Dropbox/gtd/"))
+
+  ;; gtd files
+  (setq org-gtd-file (concat gtd-directory "gtd.org"))
+  (setq org-calendar-file (concat gtd-directory "calendar.org"))
+  (setq org-someday-file (concat gtd-directory "someday.org"))
+  (setq org-reference-file (concat gtd-directory "reference.org"))
+
   (with-eval-after-load 'org
     ;; Set agenda files
-    (setq org-agenda-files (quote ("~/Dropbox/org/gpd.org")))
+    (setq org-agenda-files (list org-directory gtd-directory))
     ;; Set destination for org-capture
-    (setq org-default-notes-file "~/Dropbox/org/gpd.org")
+    (setq org-default-notes-file (list org-gtd-file))
 
     ;; State change with S will not log timestamps or notes - good for fixing todo states
     (setq org-treat-S-cursor-todo-selection-as-state-change nil)
@@ -335,19 +342,24 @@ layers configuration. You are free to put any user code."
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
   ;; Custom functions
-  (defun don-han/find-gpd-file()
+  (defun don-han/inbox-goto()
     (interactive)
-    (find-file org-gpd-file))
+    (require 'org-capture)
+    (org-capture-goto-target "c"))
+
+  (defun don-han/find-todo-file()
+    (interactive)
+    (find-file org-gtd-file))
 
   (defun don-han/find-til-file()
     (interactive)
-    (find-file (concat org-directory "til.md")))
+    (find-file "~/Dropbox/notes/til.md"))
 
-  (defun don-han/custom-gpd-todo()
+  (defun don-han/custom-gtd-todo()
     (interactive)
-    (org-agenda nil "gt"))
+    (org-agenda nil "t"))
 
-  (defun don-han/custom-gpd-agenda()
+  (defun don-han/custom-gtd-agenda()
     (interactive)
     (org-agenda nil "ga"))
 
@@ -355,20 +367,16 @@ layers configuration. You are free to put any user code."
     (interactive)
     (org-capture nil "c"))
 
-  (defun don-han/inbox-goto()
-    (interactive)
-    (require 'org-capture)
-    (org-capture-goto-target "c"))
   ;; Reserved prefix command for user : SPC o and SPC m o
   (spacemacs/set-leader-keys "oM" 'spacemacs/toggle-maximize-frame)
 
   (spacemacs/set-leader-keys "oc" 'don-han/custom-capture)
   (spacemacs/set-leader-keys "ogc" 'org-clock-goto)
   (spacemacs/set-leader-keys "ogi" 'don-han/inbox-goto)
-  (spacemacs/set-leader-keys "ofg" 'don-han/find-gpd-file)
+  (spacemacs/set-leader-keys "ofg" 'don-han/find-todo-file)
   (spacemacs/set-leader-keys "oft" 'don-han/find-til-file)
-  (spacemacs/set-leader-keys "ot" 'don-han/custom-gpd-todo)
-  (spacemacs/set-leader-keys "oa" 'don-han/custom-gpd-agenda)
+  (spacemacs/set-leader-keys "ot" 'don-han/custom-gtd-todo)
+  (spacemacs/set-leader-keys "oa" 'don-han/custom-gtd-agenda)
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "or" 'org-clock-report)
 
 )
