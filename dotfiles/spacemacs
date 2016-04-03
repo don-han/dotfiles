@@ -330,6 +330,10 @@ layers configuration. You are free to put any user code."
              ((org-agenda-ndays 1)
               (org-agenda-sorting-strategy (quote ((agenda time-up priority-down tag-up) )))
               (org-deadline-warning-days 0)))
+            ("r" "Review"
+             ((agenda "")
+              (alltodo ""))
+             )
             ))
 
     ;; Start from insert state at capture-mode instead of normal state
