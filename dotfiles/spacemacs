@@ -293,8 +293,9 @@ layers configuration. You are free to put any user code."
     ;; Handles invisible editing
     (setq org-catch-invisible-edits 'show-and-error)
 
+    ;; Settings for agenda view
     (setq org-agenda-start-day "-1d")
-    (setq org-agenda-span 7)
+    (setq org-agenda-span 4)
     (setq org-agenda-start-on-weekday nil)
 
     (setq org-refile-targets
