@@ -316,8 +316,7 @@ layers configuration. You are free to put any user code."
             ; "** %?\n %U ")
             ))
 
-    ;(setq org-agenda-prefix-format '((agenda . " %i %-12:c%?-12t% s")
-    ;                                 (timeline . "  % s")
+    (setq org-agenda-prefix-format '((todo . " %i ")))
     ;                                 (todo .
     ;                                       " %i %(concat \"[ \"(org-format-outline-path (org-get-outline-path)) \" ]\") ")
     ;                                 (tags .
