@@ -338,10 +338,23 @@ layers configuration. You are free to put any user code."
               (org-agenda-sorting-strategy (quote ((agenda time-up priority-down tag-up) )))
               (org-deadline-warning-days 0)))
 
+            ("h" "Home-related tasks"
+             ((agenda)
+              (tags-todo "@HOME")))
+
+            ("c" "Tasks that needs a computer"
+             ((agenda)
+              (tags-todo "COMPUTER")))
 
             ("r" "Review Agenda and Todos"
-             ((agenda "")
-              (alltodo ""))
+             ((agenda)
+              (alltodo))
+             )
+
+            ("P" "Print"
+             ((alltodo "" ))
+             ((org-agenda-prefix-format " [ ] "))
+             ("~/views/review.txt")
              )
 
             ("R" "Weekly Review"
