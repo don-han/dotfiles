@@ -351,7 +351,7 @@ layers configuration. You are free to put any user code."
 
     (setq org-stuck-projects
           '("+TODO=\"PROJECT\"" ("TODO" "WAITING") nil ""))
-                                        ;'("+LEVEL=2/-DONE" ("TODO") nil ""))
+
     ;; Start from insert state at capture-mode instead of normal state
     (add-hook 'org-capture-mode-hook 'evil-insert-state)
     ;; Turn off line number for org-mode
