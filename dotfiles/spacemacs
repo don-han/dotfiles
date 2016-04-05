@@ -352,7 +352,13 @@ layers configuration. You are free to put any user code."
              )
 
             ("P" "Print"
-             ((alltodo "" ))
+             (
+              (tags-todo "@HOME" )
+              (tags-todo "@SCHOOL" )
+              (tags-todo "computer" )
+              (tags-todo "phone" )
+              (tags-todo "-@HOME-@SCHOOL-computer-phone")
+              )
              ((org-agenda-prefix-format " [ ] "))
              ("~/views/review.txt")
              )
