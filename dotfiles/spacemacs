@@ -359,7 +359,9 @@ layers configuration. You are free to put any user code."
               (tags-todo "phone" )
               (tags-todo "-@HOME-@SCHOOL-computer-phone")
               )
-             ((org-agenda-prefix-format " [ ] "))
+             ((org-agenda-prefix-format " [ ] ")
+              (org-agenda-remove-tags t)
+              )
              ("~/views/review.txt")
              )
 
