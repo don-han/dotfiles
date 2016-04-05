@@ -396,7 +396,7 @@ layers configuration. You are free to put any user code."
   (spacemacs/set-leader-keys "ofg" 'don-han/find-todo-file)
   (spacemacs/set-leader-keys "oft" 'don-han/find-til-file)
   (spacemacs/set-leader-keys "ot" 'don-han/custom-gtd-todo)
-  (spacemacs/set-leader-keys "oa" 'don-han/custom-gtd-agenda)
+  (spacemacs/set-leader-keys "oa" 'org-agenda)
   (spacemacs/set-leader-keys "or" 'don-han/custom-gtd-review)
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "or" 'org-clock-report)
 
