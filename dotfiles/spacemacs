@@ -379,6 +379,10 @@ layers configuration. You are free to put any user code."
     (interactive)
     (org-agenda nil "ga"))
 
+  (defun don-han/custom-gtd-review()
+    (interactive)
+    (org-agenda nil "r"))
+
   (defun don-han/custom-capture()
     (interactive)
     (org-capture nil "c"))
@@ -393,6 +397,7 @@ layers configuration. You are free to put any user code."
   (spacemacs/set-leader-keys "oft" 'don-han/find-til-file)
   (spacemacs/set-leader-keys "ot" 'don-han/custom-gtd-todo)
   (spacemacs/set-leader-keys "oa" 'don-han/custom-gtd-agenda)
+  (spacemacs/set-leader-keys "or" 'don-han/custom-gtd-review)
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "or" 'org-clock-report)
 
 )
