@@ -339,10 +339,13 @@ layers configuration. You are free to put any user code."
               (org-agenda-sorting-strategy (quote ((agenda time-up priority-down tag-up) )))
               (org-deadline-warning-days 0)))
 
-            ("r" "Review"
+
+            ("r" "Review Agenda and Todos"
              ((agenda "")
               (alltodo ""))
              )
+            ("p" "Project List" todo "PROJECT")
+            ("w" "Waiting List" todo "WAITING")
             ))
 
     ;; Start from insert state at capture-mode instead of normal state
