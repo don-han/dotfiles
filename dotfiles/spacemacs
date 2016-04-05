@@ -308,11 +308,11 @@ layers configuration. You are free to put any user code."
              "* %?\nAdded: %U ")
 
             ("p" "Create a project"
-             entry (file+headline org-gpd-file "Projects")
-             "**  %?\n*** Desired outcome:\n*** Project plans\n*** Project support materials        :ARCHIVE: ")
+             entry (file+headline org-gtd-file "Tasks")
+             "*  %?\n- Desired outcome:\n** Project plans\n** Project support materials        :ARCHIVE: ")
             ;; collect and then process
             ;("n" "Capture notes to Notes in Reference"
-            ; entry (file+headline org-gpd-file "Notes")
+            ; entry (file+headline org-gtd-file "Notes")
             ; "** %?\n %U ")
             ))
 
@@ -344,6 +344,7 @@ layers configuration. You are free to put any user code."
              ((agenda "")
               (alltodo ""))
              )
+
             ("R" "Weekly Review"
              (;(agenda ((org-agenda-ndays-to-span 7)))
               (agenda)
