@@ -262,6 +262,9 @@ in `dotspacemacs/user-config'."
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
 
+  ;; Prevent creating .# lockfiles
+  (setq create-lockfiles nil)
+
   ;; hard-wrap (wrap by letters)
   ;(spacemacs/toggle-truncate-lines-off)
 
