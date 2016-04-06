@@ -271,7 +271,7 @@ layers configuration. You are free to put any user code."
   (global-visual-line-mode t)
 
   ;; org-mode
-  (setq org-directory (file-name-as-directory "~/Dropbox/org/"))
+  ;(setq org-directory (file-name-as-directory "~/Dropbox/org/"))
   (setq gtd-directory (file-name-as-directory "~/Dropbox/gtd/"))
 
   ;; gtd files
@@ -282,7 +282,8 @@ layers configuration. You are free to put any user code."
 
   (with-eval-after-load 'org
     ;; Set agenda files
-    (setq org-agenda-files (list org-directory gtd-directory))
+    (setq org-agenda-files (list gtd-directory))
+    
     ;; Set destination for org-capture
     (setq org-default-notes-file (list org-gtd-file))
 
