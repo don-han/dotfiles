@@ -406,11 +406,11 @@ layers configuration. You are free to put any user code."
     (require 'org-capture)
     (org-capture-goto-target "c"))
 
-  (defun don-han/find-todo-file()
+  (defun don-han/gtd-file-goto()
     (interactive)
     (find-file org-gtd-file))
 
-  (defun don-han/find-til-file()
+  (defun don-han/til-file-goto()
     (interactive)
     (find-file "~/Dropbox/notes/til.md"))
 
@@ -436,8 +436,8 @@ layers configuration. You are free to put any user code."
   (spacemacs/set-leader-keys "oc" 'don-han/custom-capture)
   (spacemacs/set-leader-keys "ogc" 'org-clock-goto)
   (spacemacs/set-leader-keys "ogi" 'don-han/inbox-goto)
-  (spacemacs/set-leader-keys "ofg" 'don-han/find-todo-file)
-  (spacemacs/set-leader-keys "oft" 'don-han/find-til-file)
+  (spacemacs/set-leader-keys "ogg" 'don-han/gtd-file-goto)
+  (spacemacs/set-leader-keys "ogt" 'don-han/til-file-goto)
   (spacemacs/set-leader-keys "ot" 'don-han/custom-gtd-todo)
   (spacemacs/set-leader-keys "oa" 'org-agenda)
   (spacemacs/set-leader-keys "or" 'don-han/custom-gtd-review)
