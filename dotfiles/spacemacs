@@ -346,6 +346,9 @@ layers configuration. You are free to put any user code."
              ((org-agenda-ndays 1)
               (org-agenda-sorting-strategy (quote ((agenda time-up priority-down tag-up) )))
               (org-deadline-warning-days 0)))
+            ;; ("l" . "List")
+            ("p" "Project List" todo "PROJECT")
+            ("w" "Waiting List" todo "WAITING")
 
             ("h" "Home-related tasks"
              ((agenda)
@@ -355,29 +358,10 @@ layers configuration. You are free to put any user code."
              ((agenda)
               (tags-todo "COMPUTER")))
 
+
             ("r" "Review Agenda and Todos"
              ((agenda)
               (alltodo))
-             )
-
-            ("P" "Print"
-            ("Pa" "Print Daily Agenda"
-             ((agenda))
-             nil
-             ("~/views/agenda-review.pdf")
-             )
-            ("Pt" "Print Todo List"
-             (
-              (tags-todo "@HOME" )
-              (tags-todo "@SCHOOL" )
-              (tags-todo "computer" )
-              (tags-todo "phone" )
-              (tags-todo "-@HOME-@SCHOOL-computer-phone")
-              )
-             ((org-agenda-prefix-format " [ ] ")
-              (org-agenda-remove-tags t)
-              )
-             ("~/views/review.txt")
              )
 
             ("R" "Weekly Review"
@@ -389,8 +373,26 @@ layers configuration. You are free to put any user code."
               (todo "MAYBE")
               (alltodo)
               ))
-            ("p" "Project List" todo "PROJECT")
-            ("w" "Waiting List" todo "WAITING")
+
+            ("Pa" "Print Daily Agenda"
+             ((agenda))
+             nil
+             ("~/views/agenda-review.pdf")
+             )
+
+            ("Pt" "Print Todo List"
+             (
+              (tags-todo "@HOME" )
+              (tags-todo "@SCHOOL" )
+              (tags-todo "computer" )
+              (tags-todo "phone" )
+              (tags-todo "-@HOME-@SCHOOL-computer-phone")
+              )
+             ((org-agenda-prefix-format " [ ] ")
+              (org-agenda-remove-tags t)
+              )
+             ("~/views/todo-review.pdf")
+             )
             ))
 
 
