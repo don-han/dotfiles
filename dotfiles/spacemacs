@@ -361,6 +361,12 @@ layers configuration. You are free to put any user code."
              )
 
             ("P" "Print"
+            ("Pa" "Print Daily Agenda"
+             ((agenda))
+             nil
+             ("~/views/agenda-review.pdf")
+             )
+            ("Pt" "Print Todo List"
              (
               (tags-todo "@HOME" )
               (tags-todo "@SCHOOL" )
