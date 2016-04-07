@@ -347,6 +347,7 @@ layers configuration. You are free to put any user code."
               (org-agenda-sorting-strategy (quote ((agenda time-up priority-down tag-up) )))
               (org-deadline-warning-days 0)))
             ;; ("l" . "List")
+            ("t" "Todo List" todo "TODO")     ;; overwrite global todo list to only include TODO and not PROJECT
             ("p" "Project List" todo "PROJECT")
             ("w" "Waiting List" todo "WAITING")
 
@@ -361,7 +362,7 @@ layers configuration. You are free to put any user code."
 
             ("r" "Review Agenda and Todos"
              ((agenda)
-              (alltodo))
+              (todo "TODO"))
              )
 
             ("R" "Weekly Review"
@@ -371,7 +372,7 @@ layers configuration. You are free to put any user code."
               (todo "PROJECT")
               (todo "WAITING")
               (todo "MAYBE")
-              (alltodo)
+              (todo "TODO")
               ))
 
             ("Pa" "Print Daily Agenda"
