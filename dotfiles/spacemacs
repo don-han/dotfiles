@@ -303,9 +303,6 @@ layers configuration. You are free to put any user code."
     (setq org-catch-invisible-edits 'show-and-error)
 
     ;; Settings for agenda view
-    (setq org-agenda-start-day "-1d")
-    (setq org-agenda-span 4)
-    (setq org-agenda-start-on-weekday nil)
 
     (setq org-refile-targets
           '((org-agenda-files :maxlevel . 2)))
@@ -364,6 +361,11 @@ layers configuration. You are free to put any user code."
             ("r" "Review Agenda and Todos"
              ((agenda)
               (todo "TODO"))
+             ((org-agenda-sorting-strategy (quote ((todo tag-up))))
+              ;(org-agenda-start-day "-1d")
+              (org-agenda-start-on-weekday nil)
+              (org-agenda-span 2)
+              )
              )
 
             ("R" "Weekly Review"
