@@ -428,6 +428,14 @@ layers configuration. You are free to put any user code."
     (interactive)
     (org-agenda nil "t"))
 
+  (defun don-han/custom-gtd-project()
+    (interactive)
+    (org-agenda nil "p"))
+
+  (defun don-han/custom-gtd-waiting()
+    (interactive)
+    (org-agenda nil "w"))
+
   (defun don-han/custom-gtd-agenda()
     (interactive)
     (org-agenda nil "ga"))
@@ -452,6 +460,8 @@ layers configuration. You are free to put any user code."
   (spacemacs/set-leader-keys "ogt" 'don-han/til-file-goto)
 
   (spacemacs/set-leader-keys "ot" 'don-han/custom-gtd-todo)
+  (spacemacs/set-leader-keys "op" 'don-han/custom-gtd-project)
+  (spacemacs/set-leader-keys "ow" 'don-han/custom-gtd-waiting)
   (spacemacs/set-leader-keys "oa" 'org-agenda)
   (spacemacs/set-leader-keys "or" 'don-han/custom-gtd-review)
 
