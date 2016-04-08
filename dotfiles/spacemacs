@@ -378,7 +378,7 @@ layers configuration. You are free to put any user code."
             ("Pa" "Print Daily Agenda"
              ((agenda))
              nil
-             ("~/views/agenda-review.pdf")
+             ("~/views/agenda-review.txt")
              )
 
             ("Pt" "Print Todo List"
@@ -392,7 +392,7 @@ layers configuration. You are free to put any user code."
              ((org-agenda-prefix-format " [ ] ")
               (org-agenda-remove-tags t)
               )
-             ("~/views/todo-review.pdf")
+             ("~/views/todo-review.txt")
              )
             ))
 
