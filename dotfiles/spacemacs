@@ -346,6 +346,7 @@ layers configuration. You are free to put any user code."
              ((org-agenda-ndays 1)
               (org-agenda-sorting-strategy (quote ((agenda time-up priority-down tag-up) )))
               (org-deadline-warning-days 0)))
+
             ;; ("l" . "List")
             ("t" "Todo List" todo "TODO")     ;; overwrite global todo list to only include TODO and not PROJECT
             ("p" "Project List" todo "PROJECT")
@@ -439,17 +440,21 @@ layers configuration. You are free to put any user code."
     (interactive)
     (org-capture nil "c"))
 
+
   ;; Reserved prefix command for user : SPC o and SPC m o
   (spacemacs/set-leader-keys "oM" 'spacemacs/toggle-maximize-frame)
 
   (spacemacs/set-leader-keys "oc" 'don-han/custom-capture)
+
   (spacemacs/set-leader-keys "ogc" 'org-clock-goto)
   (spacemacs/set-leader-keys "ogi" 'don-han/inbox-goto)
   (spacemacs/set-leader-keys "ogg" 'don-han/gtd-file-goto)
   (spacemacs/set-leader-keys "ogt" 'don-han/til-file-goto)
+
   (spacemacs/set-leader-keys "ot" 'don-han/custom-gtd-todo)
   (spacemacs/set-leader-keys "oa" 'org-agenda)
   (spacemacs/set-leader-keys "or" 'don-han/custom-gtd-review)
+
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "or" 'org-clock-report)
 
 )
