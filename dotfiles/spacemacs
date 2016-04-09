@@ -316,19 +316,8 @@ layers configuration. You are free to put any user code."
             ("p" "Create a project"
              entry (file+headline org-gtd-file "Tasks")
              "*  %?\n- Desired outcome:\n** Project plans\n** Project support materials        :ARCHIVE: ")
-            ;; collect and then process
-            ;("n" "Capture notes to Notes in Reference"
-            ; entry (file+headline org-gtd-file "Notes")
-            ; "** %?\n %U ")
             ))
 
-    (setq org-agenda-prefix-format '((todo . " %i ")))
-    ;                                 (todo .
-    ;                                       " %i %(concat \"[ \"(org-format-outline-path (org-get-outline-path)) \" ]\") ")
-    ;                                 (tags .
-    ;                                       " %i %(concat \"[ \"(org-format-outline-path (org-get-outline-path)) \" ]\") ")
-    ;                                 (search . " %i %-12:c"))
-    ;      )
 
     (setq org-agenda-custom-commands
           '(
@@ -357,15 +346,12 @@ layers configuration. You are free to put any user code."
              ((agenda)
               (todo "TODO"))
              ((org-agenda-sorting-strategy (quote ((todo tag-up))))
-              ;(org-agenda-start-day "-1d")
               (org-agenda-start-on-weekday nil)
               (org-agenda-span 2)
               )
              )
 
             ("R" "Weekly Review"
-             (;(agenda ((org-agenda-ndays-to-span 7)))
-              (agenda)
               (stuck "")
               (todo "PROJECT")
               (todo "WAITING")
