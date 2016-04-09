@@ -271,7 +271,7 @@ layers configuration. You are free to put any user code."
   (global-visual-line-mode t)
 
   ;; org-mode
-  ;(setq org-directory (file-name-as-directory "~/Dropbox/org/"))
+  (setq org-directory (file-name-as-directory "~/Dropbox/org/"))
   (setq gtd-directory (file-name-as-directory "~/Dropbox/gtd/"))
 
   ;; gtd files
@@ -450,6 +450,7 @@ layers configuration. You are free to put any user code."
   (spacemacs/set-leader-keys "oM" 'spacemacs/toggle-maximize-frame)
 
   (spacemacs/set-leader-keys "oc" 'don-han/custom-capture)
+  (spacemacs/set-leader-keys "ol" 'org-store-link)
 
   (spacemacs/set-leader-keys "ogc" 'org-clock-goto)
   (spacemacs/set-leader-keys "ogi" 'don-han/inbox-goto)
