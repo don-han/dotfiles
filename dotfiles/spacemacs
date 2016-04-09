@@ -352,9 +352,18 @@ layers configuration. You are free to put any user code."
              )
 
             ("R" "Weekly Review"
+             (
+              ;; show agenda spanning previous week and next week
+              (agenda "" 
+                      ((org-agenda-start-on-weekday nil)
+                       (org-agenda-span 15)
+                       (org-agenda-start-day "-7d")
+                       (org-agenda-entry-types '(:timestamp))
+                       (org-agenda-show-log t)))
+
               (stuck "")
-              (todo "PROJECT")
               (todo "WAITING")
+              (todo "PROJECT")
               (todo "MAYBE")
               (todo "TODO")
               ))
