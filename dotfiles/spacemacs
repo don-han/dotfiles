@@ -343,7 +343,9 @@ layers configuration. You are free to put any user code."
             ("r" "Review Agenda and Todos"
              ((agenda)
               (todo "TODO"))
-             ((org-agenda-sorting-strategy (quote ((todo tag-up))))
+             (
+              (org-agenda-files (list org-gtd-file))
+              (org-agenda-sorting-strategy (quote ((todo tag-up))))
               (org-agenda-start-on-weekday nil)
               (org-agenda-span 2)
               )
@@ -374,11 +376,11 @@ layers configuration. You are free to put any user code."
 
             ("Pt" "Print Todo List"
              (
-              (tags-todo "@HOME" )
-              (tags-todo "@SCHOOL" )
-              (tags-todo "computer" )
-              (tags-todo "phone" )
-              (tags-todo "-@HOME-@SCHOOL-computer-phone")
+              (tags-todo "@HOME+TODO=\"TODO\"" )
+              (tags-todo "@SCHOOL+TODO=\"TODO\"" )
+              (tags-todo "computer+TODO=\"TODO\"" )
+              (tags-todo "phone+TODO=\"TODO\"" )
+              (tags-todo "-@HOME-@SCHOOL-computer-phone+TODO=\"TODO\"")
               )
              ((org-agenda-prefix-format " [ ] ")
               (org-agenda-remove-tags t)
