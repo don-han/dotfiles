@@ -331,16 +331,14 @@ layers configuration. You are free to put any user code."
             ;; ("l" . "List")
             ("t" "Todo List" todo "TODO")     ;; overwrite global todo list to only include TODO and not PROJECT
             ("p" "Project List" todo "PROJECT")
-            ("w" "Waiting List" todo "WAITING")
+            ("w" "Waiting For List" todo "WAITING")
 
-            ("h" "Home-related tasks"
-             ((agenda)
-              (tags-todo "@HOME")))
 
-            ("c" "Tasks that needs a computer"
-             ((agenda)
-              (tags-todo "COMPUTER")))
-
+            ("c" . "Context-based Todo List")
+            ("ch" "Home-related tasks" tags-todo "@HOME+TODO=\"TODO\"")
+            ("cc" "Tasks that need a computer" tags-todo "computer+TODO=\"TODO\"")
+            ("ck" "Tasks that can be read with kindle" tags-todo "kindle+TODO=\"TODO\"")
+            ("cr" "Tasks that need documents" tags-todo "document+TODO=\"TODO\"")
 
             ("r" "Review Agenda and Todos"
              ((agenda)
