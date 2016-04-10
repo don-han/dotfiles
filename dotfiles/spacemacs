@@ -297,7 +297,7 @@ layers configuration. You are free to put any user code."
     (setq org-treat-S-cursor-todo-selection-as-state-change nil)
 
     ;; Prevent an automatic newline when creating an item
-    (setq org-blank-before-new-entry (quote ((heading)(plain-list-item))))
+    (setq org-blank-before-new-entry '((heading)(plain-list-item)))
 
     ;; Handles invisible editing
     (setq org-catch-invisible-edits 'show-and-error)
@@ -321,35 +321,29 @@ layers configuration. You are free to put any user code."
 
     (setq org-agenda-custom-commands
           '(
-            ("g" . "Getting Pomodoros Done")
-
-            ("gd" "Daily Action List" agenda ""
-             ((org-agenda-ndays 1)
-              (org-agenda-sorting-strategy (quote ((agenda time-up priority-down tag-up) )))
-              (org-deadline-warning-days 0)))
-
             ;; ("l" . "List")
             ("t" "Todo List" todo "TODO")     ;; overwrite global todo list to only include TODO and not PROJECT
             ("p" "Project List" todo "PROJECT")
             ("w" "Waiting For List" todo "WAITING")
 
-
+            ;; Context
             ("c" . "Context-based Todo List")
             ("ch" "Home-related tasks" tags-todo "@HOME+TODO=\"TODO\"")
             ("cc" "Tasks that need a computer" tags-todo "computer+TODO=\"TODO\"")
             ("ck" "Tasks that can be read with kindle" tags-todo "kindle+TODO=\"TODO\"")
             ("cr" "Tasks that need documents" tags-todo "document+TODO=\"TODO\"")
 
+
+            ;; Review
             ("r" "Review Agenda and Todos"
              ((agenda)
               (todo "TODO"))
              (
               (org-agenda-files (list org-gtd-file))
-              (org-agenda-sorting-strategy (quote ((todo tag-up))))
+              (org-agenda-sorting-strategy '((todo tag-up)))
               (org-agenda-start-on-weekday nil)
               (org-agenda-span 2)
-              )
-             )
+              ))
 
             ("R" "Weekly Review"
              (
@@ -368,6 +362,7 @@ layers configuration. You are free to put any user code."
               (todo "TODO")
               ))
 
+            ;; For Printing
             ("Pa" "Print Daily Agenda"
              ((agenda))
              nil
