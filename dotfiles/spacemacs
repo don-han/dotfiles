@@ -289,6 +289,7 @@ layers configuration. You are free to put any user code."
 
     ;; Do not display entries if done
     ;(setq org-agenda-skip-deadline-if-done t)
+    ;(setq org-agenda-skip-scheduled-if-done t)
 
     ;; Do not worry about planned todo
     (setq org-agenda-todo-ignore-scheduled 'future)
@@ -304,7 +305,7 @@ layers configuration. You are free to put any user code."
 
     ;; Settings for Refile
     (setq org-refile-targets
-          '((org-agenda-files :maxlevel . 2)))
+          '((org-agenda-files :maxlevel . 9)))
     (setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
     (setq org-refile-use-outline-path t)                  ; Show full paths for refiling
 
