@@ -339,8 +339,11 @@ layers configuration. You are free to put any user code."
             ;; Review
             ("r" "Review Agenda and Todos"
              ((agenda)
-              (todo "TODO"))
+              (todo "TODO"
+                    ((org-agenda-overriding-header "Next Actions"))
+                    ))
              (
+
               (org-agenda-files (list org-gtd-file))
               (org-agenda-sorting-strategy '((todo tag-up)))
               (org-agenda-start-on-weekday nil)
@@ -358,10 +361,18 @@ layers configuration. You are free to put any user code."
                        (org-agenda-show-log t)))
 
               (stuck "")
-              (todo "WAITING")
-              (todo "PROJECT")
-              (todo "MAYBE")
-              (todo "TODO")
+              (todo "WAITING"
+                    ((org-agenda-overriding-header "Waiting For")))
+              (todo "PROJECT"
+                    ((org-agenda-overriding-header "Projects"))
+                    )
+              (todo "MAYBE"
+                    ((org-agenda-overriding-header "Someday/Maybe"))
+                    )
+              (todo "TODO"
+                    ((org-agenda-overriding-header "Next Actions"))
+
+                    )
               ))
 
             ;; For Printing
