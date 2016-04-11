@@ -302,11 +302,13 @@ layers configuration. You are free to put any user code."
     ;; Handles invisible editing
     (setq org-catch-invisible-edits 'show-and-error)
 
-    ;; Settings for agenda view
-
+    ;; Settings for Refile
     (setq org-refile-targets
           '((org-agenda-files :maxlevel . 2)))
+    (setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
+    (setq org-refile-use-outline-path t)                  ; Show full paths for refiling
 
+    ;; Settings for agenda view
     (setq org-capture-templates
           '(
             ("c" "Capture anything to Inbox"
@@ -454,7 +456,6 @@ layers configuration. You are free to put any user code."
   (spacemacs/set-leader-keys "or" 'don-han/custom-gtd-review)
 
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "or" 'org-clock-report)
-
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
