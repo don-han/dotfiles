@@ -14,6 +14,8 @@ alias hidden='ls -ld .*'
 
 alias tmux='tmux -2'        # allows 256 colors for vim to work in tmux
 
+alias freemacs='pkill -SIGUSR2 Emacs' # unfreeze emacs from hanging
+
 # notes
 alias n='vim ~/Dropbox/.note'
 alias notes='cd ~/Dropbox/notes/'
