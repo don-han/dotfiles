@@ -426,6 +426,14 @@ layers configuration. You are free to put any user code."
     (interactive)
     (find-file org-gtd-file))
 
+  (defun don-han/someday-file-goto()
+    (interactive)
+    (find-file org-someday-file))
+
+  (defun don-han/reference-file-goto()
+    (interactive)
+    (find-file org-reference-file))
+
   (defun don-han/custom-gtd-todo()
     (interactive)
     (org-agenda nil "t"))
@@ -460,6 +468,8 @@ layers configuration. You are free to put any user code."
   (spacemacs/set-leader-keys "ogc" 'org-clock-goto)
   (spacemacs/set-leader-keys "ogi" 'don-han/inbox-goto)
   (spacemacs/set-leader-keys "ogg" 'don-han/gtd-file-goto)
+  (spacemacs/set-leader-keys "ogr" 'don-han/reference-file-goto)
+  (spacemacs/set-leader-keys "ogs" 'don-han/someday-file-goto)
 
   (spacemacs/set-leader-keys "ot" 'don-han/custom-gtd-todo)
   (spacemacs/set-leader-keys "op" 'don-han/custom-gtd-project)
