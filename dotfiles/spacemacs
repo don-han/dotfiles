@@ -264,10 +264,10 @@ layers configuration. You are free to put any user code."
   ;; Prevent creating .# lockfiles
   (setq create-lockfiles nil)
 
-  ;; hard-wrap (wrap by letters)
+  ;; Hard-wrap (wrap by letters)
   ;(spacemacs/toggle-truncate-lines-off)
 
-  ;; soft-wrap (wrap by words)
+  ;; Soft-wrap (wrap by words)
   (global-visual-line-mode t)
 
   ;; org-mode
@@ -304,8 +304,7 @@ layers configuration. You are free to put any user code."
     (setq org-catch-invisible-edits 'show-and-error)
 
     ;; Settings for Refile
-    (setq org-refile-targets
-          '((org-agenda-files :maxlevel . 9)))
+    (setq org-refile-targets '((org-agenda-files :maxlevel . 9)))
     (setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
     (setq org-refile-use-outline-path t)                  ; Show full paths for refiling
 
@@ -335,7 +334,6 @@ layers configuration. You are free to put any user code."
             ("cc" "Tasks that need a computer" tags-todo "computer+TODO=\"TODO\"")
             ("ck" "Tasks that can be read with kindle" tags-todo "kindle+TODO=\"TODO\"")
             ("cr" "Tasks that need documents" tags-todo "document+TODO=\"TODO\"")
-
 
             ;; Review
             ("r" "Review Agenda and Todos"
@@ -464,10 +462,11 @@ layers configuration. You are free to put any user code."
   (spacemacs/set-leader-keys "ot" 'don-han/custom-gtd-todo)
   (spacemacs/set-leader-keys "op" 'don-han/custom-gtd-project)
   (spacemacs/set-leader-keys "ow" 'don-han/custom-gtd-waiting)
+
   (spacemacs/set-leader-keys "oa" 'org-agenda)
   (spacemacs/set-leader-keys "or" 'don-han/custom-gtd-review)
 
-  (spacemacs/set-leader-keys-for-major-mode 'org-mode "or" 'org-clock-report)
+  (spacemacs/set-leader-keys-for-major-mode 'org-mode "oR" 'org-clock-report)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
