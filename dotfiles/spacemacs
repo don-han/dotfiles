@@ -281,6 +281,10 @@ layers configuration. You are free to put any user code."
   (setq org-reference-file (concat gtd-directory "reference.org"))
 
   (with-eval-after-load 'org
+    ;; org-module
+    (add-to-list 'org-modules 'org-habit)
+    (add-to-list 'org-modules 'org-crypt)
+
     ;; Set agenda files
     (setq org-agenda-files (list gtd-directory))
     
@@ -326,7 +330,6 @@ layers configuration. You are free to put any user code."
              entry (file+headline org-gtd-file "Tasks")
              "*  %?\n- Desired outcome:\n** Project plans\n** Project support materials        :ARCHIVE: ")
             ))
-
 
     (setq org-agenda-custom-commands
           '(
@@ -457,7 +460,6 @@ layers configuration. You are free to put any user code."
   (defun don-han/custom-capture()
     (interactive)
     (org-capture nil "c"))
-
 
   ;; Reserved prefix command for user : SPC o and SPC m o
   (spacemacs/set-leader-keys "oM" 'spacemacs/toggle-maximize-frame)
