@@ -287,6 +287,13 @@ layers configuration. You are free to put any user code."
     ;; Set destination for org-capture
     (setq org-default-notes-file (list org-gtd-file))
 
+    ;; More comprehensive autosave for org mode
+    (advice-add 'org-refile :after 'org-save-all-org-buffers)
+    (add-hook 'org-agenda-mode-hook
+              (lambda ()
+                (add-hook 'auto-save-hook 'org-save-all-org-buffers nil t)
+                (auto-save-mode)))
+
     ;; Do not display entries if done
     ;(setq org-agenda-skip-deadline-if-done t)
     ;(setq org-agenda-skip-scheduled-if-done t)
