@@ -273,6 +273,8 @@ layers configuration. You are free to put any user code."
   ;; org-mode
   (setq org-directory (file-name-as-directory "~/Dropbox/org/"))
   (setq gtd-directory (file-name-as-directory "~/Dropbox/gtd/"))
+  (setq project-directory (file-name-as-directory "~/Dropbox/gtd/projects"))
+  (setq org-private-file "~/Dropbox/dotfile/org-private")
 
   ;; gtd files
   (setq org-gtd-file (concat gtd-directory "gtd.org"))
@@ -440,6 +442,10 @@ layers configuration. You are free to put any user code."
     (add-hook 'org-capture-mode-hook 'evil-insert-state)
     ;; Turn off line number for org-mode
     (add-hook 'org-mode-hook 'spacemacs/toggle-line-numbers-off)
+
+    (when (file-exists-p "~/my-settings.el")
+      (load-file "~/my-settings.el"))
+
     )
 
   ;; Used by LaTeX layer to perform full-document previews
