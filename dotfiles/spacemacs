@@ -342,6 +342,7 @@ layers configuration. You are free to put any user code."
             ("t" "Todo List" todo "TODO")     ;; overwrite global todo list to only include TODO and not PROJECT
             ("p" "Project List" todo "PROJECT")
             ("w" "Waiting For List" todo "WAITING")
+            ("v" "TODO Entries with Vague Description" tags "VAGUE")
 
             ;; Context
             ("c" . "Context-based Todo List")
