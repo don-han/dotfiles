@@ -282,6 +282,7 @@ layers configuration. You are free to put any user code."
   (setq org-someday-file (concat gtd-directory "someday.org"))
   (setq org-reference-file (concat gtd-directory "reference.org"))
 
+  (setq org-archive-file (concat org-gtd-file "_archive"))
   (with-eval-after-load 'org
     ;; org-module
     (add-to-list 'org-modules 'org-habit)
@@ -466,6 +467,10 @@ layers configuration. You are free to put any user code."
   (defun don-han/reference-file-goto()
     (interactive)
     (find-file org-reference-file))
+
+  (defun don-han/archive-file-goto()
+    (interactive)
+    (find-file org-archive-file))
 
   (defun don-han/custom-gtd-todo()
     (interactive)
