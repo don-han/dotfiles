@@ -497,21 +497,27 @@ layers configuration. You are free to put any user code."
   ;; Reserved prefix command for user : SPC o and SPC m o
   (spacemacs/set-leader-keys "oM" 'spacemacs/toggle-maximize-frame)
 
-  (spacemacs/set-leader-keys "oc" 'don-han/custom-capture)
-  (spacemacs/set-leader-keys "ol" 'org-store-link)
+  (spacemacs/set-leader-keys
+    "oc" 'don-han/custom-capture
+    "ol" 'org-store-link)
 
-  (spacemacs/set-leader-keys "ogc" 'org-clock-goto)
-  (spacemacs/set-leader-keys "ogi" 'don-han/inbox-goto)
-  (spacemacs/set-leader-keys "ogg" 'don-han/gtd-file-goto)
-  (spacemacs/set-leader-keys "ogr" 'don-han/reference-file-goto)
-  (spacemacs/set-leader-keys "ogs" 'don-han/someday-file-goto)
+  ;; goto commands
+  (spacemacs/set-leader-keys
+    "ogc" 'org-clock-goto
+    "ogi" 'don-han/inbox-goto
+    "ogg" 'don-han/gtd-file-goto
+    "ogr" 'don-han/reference-file-goto
+    "ogs" 'don-han/someday-file-goto
+    "oga" 'don-han/archive-file-goto)
 
-  (spacemacs/set-leader-keys "ot" 'don-han/custom-gtd-todo)
-  (spacemacs/set-leader-keys "op" 'don-han/custom-gtd-project)
-  (spacemacs/set-leader-keys "ow" 'don-han/custom-gtd-waiting)
+  ;; agenda commands
+  (spacemacs/set-leader-keys
+    "oa" 'org-agenda
+    "or" 'don-han/custom-gtd-review
 
-  (spacemacs/set-leader-keys "oa" 'org-agenda)
-  (spacemacs/set-leader-keys "or" 'don-han/custom-gtd-review)
+    "ot" 'don-han/custom-gtd-todo
+    "op" 'don-han/custom-gtd-project
+    "ow" 'don-han/custom-gtd-waiting)
 
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "oR" 'org-clock-report)
 )
