@@ -273,7 +273,7 @@ layers configuration. You are free to put any user code."
   ;; org-mode
   (setq org-directory (file-name-as-directory "~/Dropbox/org/"))
   (setq gtd-directory (file-name-as-directory "~/Dropbox/gtd/"))
-  (setq project-directory (file-name-as-directory "~/Dropbox/gtd/workstation"))
+  (setq workstation-directory (file-name-as-directory "~/Dropbox/gtd/workstation"))
   (setq org-private-file "~/Dropbox/dotfile/org-private")
 
   ;; gtd files
@@ -288,7 +288,7 @@ layers configuration. You are free to put any user code."
     (add-to-list 'org-modules 'org-crypt)
 
     ;; Set agenda files
-    (setq org-agenda-files (list gtd-directory))
+    (setq org-agenda-files (list gtd-directory workstation-directory))
     
     ;; Set destination for org-capture
     (setq org-default-notes-file (list org-gtd-file))
@@ -354,12 +354,9 @@ layers configuration. You are free to put any user code."
             ;; Review
             ("r" "Review Agenda and Todos"
              ((agenda)
-              (todo "TODO"
-                    ((org-agenda-overriding-header "Next Actions"))
-                    ))
-             (
-
-              (org-agenda-files (list org-gtd-file))
+              (todo "TODO" ((org-agenda-overriding-header "Next Actions")))
+              )
+             ((org-agenda-files (list org-gtd-file))
               (org-agenda-sorting-strategy '((todo tag-up)))
               (org-agenda-start-on-weekday nil)
               (org-agenda-span 2)
