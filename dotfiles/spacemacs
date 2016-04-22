@@ -273,7 +273,7 @@ layers configuration. You are free to put any user code."
   ;; org-mode
   (setq org-directory (file-name-as-directory "~/Dropbox/org/"))
   (setq gtd-directory (file-name-as-directory "~/Dropbox/gtd/"))
-  (setq project-directory (file-name-as-directory "~/Dropbox/gtd/projects"))
+  (setq project-directory (file-name-as-directory "~/Dropbox/gtd/workstation"))
   (setq org-private-file "~/Dropbox/dotfile/org-private")
 
   ;; gtd files
