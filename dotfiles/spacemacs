@@ -277,15 +277,15 @@ layers configuration. You are free to put any user code."
   (setq org-directory (file-name-as-directory "~/Dropbox/org/"))
   (setq gtd-directory (file-name-as-directory "~/Dropbox/gtd/"))
   (setq workstation-directory (file-name-as-directory "~/Dropbox/gtd/workstation"))
-  (setq org-private-file "~/Dropbox/dotfile/org-private")
 
   ;; gtd files
   (setq org-gtd-file (concat gtd-directory "gtd.org"))
   (setq org-calendar-file (concat gtd-directory "calendar.org"))
   (setq org-someday-file (concat gtd-directory "someday.org"))
   (setq org-reference-file (concat gtd-directory "reference.org"))
-
   (setq org-archive-file (concat org-gtd-file "_archive"))
+  (setq org-private-file "~/Dropbox/dotfile/org-private")
+
   (with-eval-after-load 'org
     ;; org-module
     (add-to-list 'org-modules 'org-habit)
