@@ -357,7 +357,8 @@ layers configuration. You are free to put any user code."
              ((agenda)
               (todo "TODO" ((org-agenda-overriding-header "Next Actions")))
               )
-             ((org-agenda-files (list org-gtd-file))
+             (
+              (org-agenda-files (list org-gtd-file workstation-directory))
               (org-agenda-sorting-strategy '((todo tag-up)))
               (org-agenda-start-on-weekday nil)
               (org-agenda-span 2)
