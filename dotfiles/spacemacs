@@ -261,6 +261,9 @@ in `dotspacemacs/user-config'."
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
 
+  ;; jit lock keeps crashing org-mode when opening mini-buffer such as refiling or changing TODO/TAGS
+  (setq jit-lock-debug-mode t)
+
   ;; Prevent creating .# lockfiles
   (setq create-lockfiles nil)
 
