@@ -304,6 +304,8 @@ layers configuration. You are free to put any user code."
               (lambda ()
                 (add-hook 'auto-save-hook 'org-save-all-org-buffers nil t)
                 (auto-save-mode)))
+    (advice-add 'org-archive-subtree :after 'org-save-all-org-buffers)
+    (advice-add 'org-capture :after 'org-save-all-org-buffers)
 
     ;; Do not display entries if done
     ;(setq org-agenda-skip-deadline-if-done t)
