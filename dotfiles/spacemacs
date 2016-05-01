@@ -347,7 +347,11 @@ layers configuration. You are free to put any user code."
     (setq org-agenda-custom-commands
           '(
             ;; ("l" . "List")
-            ("t" "Todo List" todo "TODO")     ;; overwrite global todo list to only include TODO and not PROJECT
+            ("t" "Todo List" todo "TODO"
+             ((org-agenda-overriding-header "Next Actions")
+              (org-agenda-files (list org-gtd-file workstation-directory))
+              ))
+             ;; overwrite global todo list to only include TODO and not PROJECT
             ("p" "Project List" todo "PROJECT")
             ("w" "Waiting For List" todo "WAITING")
             ("v" "TODO Entries with Vague Description" tags "VAGUE")
