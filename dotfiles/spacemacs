@@ -383,7 +383,8 @@ layers configuration. You are free to put any user code."
                        (org-agenda-span 15)
                        (org-agenda-start-day "-7d")
                        (org-agenda-entry-types '(:timestamp))
-                       (org-agenda-show-log t)))
+                       ;(org-agenda-show-log t)
+                       ))
 
               (stuck "")
               (todo "WAITING"
