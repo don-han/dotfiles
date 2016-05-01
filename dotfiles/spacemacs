@@ -284,6 +284,7 @@ layers configuration. You are free to put any user code."
   (setq org-someday-file (concat gtd-directory "someday.org"))
   (setq org-reference-file (concat gtd-directory "reference.org"))
   (setq org-archive-file (concat org-gtd-file "_archive"))
+  (setq weekly-review-file (concat gtd-directory "weekly-review.org"))
   (setq org-private-file "~/Dropbox/dotfile/org-private")
 
   (with-eval-after-load 'org
@@ -485,6 +486,10 @@ layers configuration. You are free to put any user code."
     (interactive)
     (find-file org-archive-file))
 
+  (defun don-han/weekly-review-goto()
+    (interactive)
+    (find-file weekly-review-file))
+
   (defun don-han/custom-gtd-todo()
     (interactive)
     (org-agenda nil "t"))
@@ -523,7 +528,9 @@ layers configuration. You are free to put any user code."
     "ogg" 'don-han/gtd-file-goto
     "ogr" 'don-han/reference-file-goto
     "ogs" 'don-han/someday-file-goto
-    "oga" 'don-han/archive-file-goto)
+    "oga" 'don-han/archive-file-goto
+    "ogw" 'don-han/weekly-review-goto
+    )
 
   ;; agenda commands
   (spacemacs/set-leader-keys
