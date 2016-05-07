@@ -274,19 +274,19 @@ layers configuration. You are free to put any user code."
   (global-visual-line-mode t)
 
   ;; org-mode
-  (setq org-directory (file-name-as-directory (expand-file-name "~/Dropbox/org/")))
-  (setq gtd-directory (file-name-as-directory (expand-file-name "~/Dropbox/gtd/")))
-  (setq workstation-directory (file-name-as-directory (expand-file-name "~/Dropbox/gtd/workstation")))
+  (setq org-directory (file-name-as-directory "~/Dropbox/org/"))
+  (setq gtd-directory (file-name-as-directory "~/Dropbox/gtd/"))
+  (setq workstation-directory (file-name-as-directory "~/Dropbox/gtd/workstation"))
 
   ;; gtd files
-  (setq org-gtd-file (concat gtd-directory "gtd.org"))
-  (setq org-calendar-file (concat gtd-directory "calendar.org"))
-  (setq org-someday-file (concat gtd-directory "someday.org"))
-  (setq org-reference-file (concat gtd-directory "reference.org"))
+  (setq org-gtd-file (expand-file-name "gtd.org" gtd-directory))
   (setq org-archive-file (concat org-gtd-file "_archive"))
-  (setq weekly-review-file (concat gtd-directory "weekly-review.org"))
-  (setq org-journal-file (concat gtd-directory "journal.org"))
-  (setq org-private-file "~/Dropbox/dotfile/org-private")
+  (setq org-calendar-file (expand-file-name "calendar.org" gtd-directory))
+  (setq org-someday-file (expand-file-name "someday.org" gtd-directory))
+  (setq org-reference-file (expand-file-name "reference.org" gtd-directory))
+  (setq weekly-review-file (expand-file-name "weekly-review.org" gtd-directory))
+  (setq org-journal-file (expand-file-name "journal.org" gtd-directory))
+  (setq org-private-file (expand-file-name "~/Dropbox/dotfile/org-private"))
 
   (with-eval-after-load 'org
     ;; org-module
