@@ -285,6 +285,7 @@ layers configuration. You are free to put any user code."
   (setq org-reference-file (concat gtd-directory "reference.org"))
   (setq org-archive-file (concat org-gtd-file "_archive"))
   (setq weekly-review-file (concat gtd-directory "weekly-review.org"))
+  (setq org-journal-file (concat gtd-directory "journal.org"))
   (setq org-private-file "~/Dropbox/dotfile/org-private")
 
   (with-eval-after-load 'org
@@ -339,6 +340,12 @@ layers configuration. You are free to put any user code."
             ("c" "Capture anything to Inbox"
              entry (file+headline org-gtd-file "Inbox")
              "* %?\nAdded: %U ")
+
+            ("j" "Write a journal entry"
+             entry (file+datetree org-journal-file)
+             "* %?"
+             :empty-lines 1
+             )
 
             ("p" "Create a project"
              entry (file+headline org-gtd-file "Tasks")
