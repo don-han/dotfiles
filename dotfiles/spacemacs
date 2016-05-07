@@ -349,7 +349,6 @@ layers configuration. You are free to put any user code."
             ("j" "Write a journal entry"
              entry (file+datetree org-journal-file)
              "* %?"
-             :empty-lines 1
              )
 
             ("p" "Create a project"
@@ -486,6 +485,10 @@ layers configuration. You are free to put any user code."
     (interactive)
     (find-file org-gtd-file))
 
+  (defun don-han/archive-file-goto()
+    (interactive)
+    (find-file org-archive-file))
+
   (defun don-han/someday-file-goto()
     (interactive)
     (find-file org-someday-file))
@@ -493,10 +496,10 @@ layers configuration. You are free to put any user code."
   (defun don-han/reference-file-goto()
     (interactive)
     (find-file org-reference-file))
-
-  (defun don-han/archive-file-goto()
+ 
+  (defun don-han/journal-file-goto()
     (interactive)
-    (find-file org-archive-file))
+    (find-file org-journal-file))
 
   (defun don-han/weekly-review-goto()
     (interactive)
@@ -525,22 +528,29 @@ layers configuration. You are free to put any user code."
   (defun don-han/custom-capture()
     (interactive)
     (org-capture nil "c"))
+  
+  (defun don-han/journal-capture()
+    (interactive)
+    (org-capture nil "j"))
 
   ;; Reserved prefix command for user : SPC o and SPC m o
   (spacemacs/set-leader-keys "oM" 'spacemacs/toggle-maximize-frame)
 
   (spacemacs/set-leader-keys
     "oc" 'don-han/custom-capture
-    "ol" 'org-store-link)
+    "ol" 'org-store-link
+    "oj" 'don-han/journal-capture
+    )
 
   ;; goto commands
   (spacemacs/set-leader-keys
     "ogc" 'org-clock-goto
     "ogi" 'don-han/inbox-goto
     "ogg" 'don-han/gtd-file-goto
-    "ogr" 'don-han/reference-file-goto
-    "ogs" 'don-han/someday-file-goto
     "oga" 'don-han/archive-file-goto
+    "ogs" 'don-han/someday-file-goto
+    "ogr" 'don-han/reference-file-goto
+    "ogj" 'don-han/journal-file-goto
     "ogw" 'don-han/weekly-review-goto
     )
 
