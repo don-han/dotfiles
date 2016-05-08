@@ -332,7 +332,7 @@ layers configuration. You are free to put any user code."
     (setq org-catch-invisible-edits 'show-and-error)
 
     ;; Prevent showing too much repeated dates
-    (setq org-agenda-repeating-timestamp-show-all nil)
+    ;(setq org-agenda-repeating-timestamp-show-all nil)
 
     ;; Settings for Refile
     (setq org-refile-targets '((org-agenda-files :maxlevel . 9)))
