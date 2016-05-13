@@ -541,6 +541,7 @@ layers configuration. You are free to put any user code."
   ;; Reserved prefix command for user : SPC o and SPC m o
   (spacemacs/set-leader-keys "oM" 'spacemacs/toggle-maximize-frame)
 
+  ;; general commands
   (spacemacs/set-leader-keys
     "oc" 'don-han/custom-capture
     "ol" 'org-store-link
@@ -568,7 +569,10 @@ layers configuration. You are free to put any user code."
     "op" 'don-han/custom-gtd-project
     "ow" 'don-han/custom-gtd-waiting)
 
-  (spacemacs/set-leader-keys-for-major-mode 'org-mode "oR" 'org-clock-report)
+  ;; org-mode specific commands
+  (spacemacs/set-leader-keys-for-major-mode 'org-mode
+    "oR" 'org-clock-report
+    "iL" 'org-insert-last-stored-link)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
