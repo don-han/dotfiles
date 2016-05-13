@@ -278,6 +278,11 @@ layers configuration. You are free to put any user code."
   ;; Soft-wrap (wrap by words)
   (global-visual-line-mode t)
 
+  ;; Settings for OS X
+  (when (eq system-type 'darwin)
+    (setq mac-command-modifier 'meta)
+    (setq mac-option-modifier nil))
+
   ;; org-mode
   (setq org-directory (file-name-as-directory "~/Dropbox/org/"))
   (setq gtd-directory (file-name-as-directory "~/Dropbox/gtd/"))
