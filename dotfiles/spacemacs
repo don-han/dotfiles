@@ -319,7 +319,9 @@ layers configuration. You are free to put any user code."
     (advice-add 'org-archive-subtree :after 'org-save-all-org-buffers)
     (advice-add 'org-capture :after 'org-save-all-org-buffers)
 
-    (advice-add 'org-agenda :after #'delete-other-windows)
+    ;; Maximize the org agenda frame
+    (setq org-agenda-window-setup 'only-window)
+
     ;; Do not display entries if done
     ;(setq org-agenda-skip-deadline-if-done t)
     ;(setq org-agenda-skip-scheduled-if-done t)
