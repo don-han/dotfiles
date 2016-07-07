@@ -26,7 +26,6 @@ for FILE in $FILES; do
         echo "[-] Symlink '$FILE' has not been changed. Skipping ..."
         continue
     fi
-    echo "[-] Syncing $FILE"
 
     # if symlink
     if [ -L ~/.$FILE ]; then
@@ -57,7 +56,7 @@ mkdir -p ~/.vim/{backup,swap,undo}
 # activate new dotiles
 source ~/.bashrc
 
-echo "[*] DONE"
+echo "[*] Done"
 exit
 
 # this removes the dot from dotfiles in $olddir; to re-add dot, use prefix_dot.sh file
