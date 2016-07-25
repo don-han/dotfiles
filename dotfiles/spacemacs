@@ -266,6 +266,13 @@ in `dotspacemacs/user-config'."
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
 
+  ;; MacOS specific settings
+  (when (eq system-type 'darwin)
+    (setq mac-command-modifier 'meta)
+    (setq mac-option-modifier 'super)
+
+    (global-set-key [kp-delete] 'delete-char) ;; sets fn-delete to be right-delete
+    )
   ;; jit lock keeps crashing org-mode when opening mini-buffer such as refiling or changing TODO/TAGS
   (setq jit-lock-debug-mode t)
 
