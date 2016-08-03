@@ -327,6 +327,12 @@ layers configuration. You are free to put any user code."
     ;(setq org-agenda-skip-deadline-if-done t)
     ;(setq org-agenda-skip-scheduled-if-done t)
 
+    ;; Set TODO keywords
+    (setq org-todo-keywords
+          '((sequence "TODO(t)" "PROJECT(p)" "|")
+            (sequence "|" "WAITING(w@/!)" "DONE(d!)" "CANCELLED(c@)" "INCOMPLETE(i@)" "SOMEDAY(s)"))
+    )
+
     ;; Do not worry about planned todo
     (setq org-agenda-todo-ignore-scheduled 'future)
 
