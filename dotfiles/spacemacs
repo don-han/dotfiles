@@ -288,6 +288,7 @@ layers configuration. You are free to put any user code."
   ;; org-mode
   (setq org-directory (file-name-as-directory "~/Dropbox/org/"))
   (setq gtd-directory (file-name-as-directory "~/Dropbox/gtd/"))
+  (setq work-directory (file-name-as-directory "~/Dropbox/gtd/work-notes"))
   (setq workstation-directory (file-name-as-directory "~/Dropbox/gtd/workstation"))
 
   ;; gtd files
@@ -307,7 +308,7 @@ layers configuration. You are free to put any user code."
     (add-to-list 'org-modules 'org-crypt)
 
     ;; Set agenda files
-    (setq org-agenda-files (list gtd-directory workstation-directory))
+    (setq org-agenda-files (list gtd-directory workstation-directory work-directory))
     
     ;; Set destination for org-capture
     (setq org-default-notes-file (list org-gtd-file))
@@ -368,7 +369,7 @@ layers configuration. You are free to put any user code."
             ;; ("l" . "List")
             ("t" "Todo List" todo "TODO"
              ((org-agenda-overriding-header "Next Actions")
-              (org-agenda-files (list org-gtd-file workstation-directory))
+              (org-agenda-files (list org-gtd-file workstation-directory work-directory))
               ))
              ;; overwrite global todo list to only include TODO and not PROJECT
             ("p" "Project List" todo "PROJECT")
@@ -388,7 +389,7 @@ layers configuration. You are free to put any user code."
               (todo "TODO" ((org-agenda-overriding-header "Next Actions")))
               )
              (
-              (org-agenda-files (list org-gtd-file workstation-directory))
+              (org-agenda-files (list org-gtd-file workstation-directory work-directory))
               (org-agenda-sorting-strategy '((todo tag-up)))
               (org-agenda-start-on-weekday nil)
               (org-agenda-span 2)
