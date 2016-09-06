@@ -1,5 +1,5 @@
 ## ALIAS SETTINGS ##
-alias sobash='source ~/.bashrc'
+alias soprof='source ~/.bash_profile'
 
 alias vibash='vim ~/.bashrc'
 alias vivim='vim ~/.vimrc'

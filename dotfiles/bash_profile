@@ -1,5 +1,9 @@
 [[ -f ~/.bashrc ]] && source ~/.bashrc
 [[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
+
+[[ -f ~/.profile ]] && source ~/.profile
+[[ -f ~/.profile.local ]] && source ~/.profile.local
+
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 [[ -f ~/.bash_aliases.local ]] && source ~/.bash_aliases.local
 
