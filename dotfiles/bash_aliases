@@ -7,8 +7,12 @@ alias vial='vim ~/.bash_aliases'
 
 alias vidot='vim ~/repo/dotfiles/dotfiles'
 
-alias ls='ls -GFh'
-#--color=auto'
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    alias ls='ls -GFh'
+    #--color=auto'
+elif [[ "$(uname -s)" == "Linux" ]]; then
+    alias ls='ls --color=auto'
+fi
 
 alias hidden='ls -ld .*'
 
