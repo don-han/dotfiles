@@ -10,15 +10,15 @@ alias vialloc='vim ~/.bash_aliases.local'
 alias vidot='vim ~/repo/dotfiles/dotfiles'
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
-    alias ls='ls -GFh'
+    alias l='ls -GFh'
     #--color=auto'
 elif [[ "$(uname -s)" == "Linux" ]]; then
-    alias ls='ls --color=auto'
+    alias l='ls --color=auto'
 fi
 
 alias hidden='ls -ld .*'
 
-alias tmux='tmux -2'        # allows 256 colors for vim to work in tmux
+alias tmuxx='tmux -2'        # allows 256 colors for vim to work in tmux
 
 alias freemacs='pkill -SIGUSR2 Emacs' # unfreeze emacs from hanging
 
@@ -35,9 +35,6 @@ alias branch='git branch'
 alias checkout='git checkout'
 
 # General
-alias df='df -h'
-alias du='du -sh'
-
 alias v='vim'
 
 # Trash
