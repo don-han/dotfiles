@@ -1,9 +1,11 @@
 ## ALIAS SETTINGS ##
 alias soprof='source ~/.bash_profile'
+alias viprof='vim ~/.bash_profile'
 
 alias vibash='vim ~/.bashrc'
 alias vivim='vim ~/.vimrc'
 alias vial='vim ~/.bash_aliases'
+alias vialloc='vim ~/.bash_aliases.local'
 
 alias vidot='vim ~/repo/dotfiles/dotfiles'
 
@@ -44,14 +46,8 @@ alias trash='mktrash; mv -t ~/.Trash'
 alias t='trash'
 alias trash-empty='mktrash; rm -r ~/.Trash'
 alias trash-list='mktrash; ls -A ~/.Trash'
-
-# FOR OS X #
-alias soprof='source ~/.bash_profile'
-alias viprof='vim ~/.bash_profile'
-
 # gitit
 alias gi='cd ~/wiki && gitit'
 
 # VERCON 
 alias vc='bash ~/repo/vercon/vercon.sh'
-
