@@ -43,8 +43,3 @@ alias trash='mktrash; mv -t ~/.Trash'
 alias t='trash'
 alias trash-empty='mktrash; rm -r ~/.Trash'
 alias trash-list='mktrash; ls -A ~/.Trash'
-# gitit
-alias gi='cd ~/wiki && gitit'
-
-# VERCON 
-alias vc='bash ~/repo/vercon/vercon.sh'
