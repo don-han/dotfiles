@@ -28,13 +28,7 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     # added by Anaconda2 2.4.1 installer
     export PATH="/Users/donhan/anaconda/bin:$PATH"
 
-<<<<<<< HEAD
-
-# added by Anaconda3 4.1.1 installer
-export PATH="/Users/donhan/anaconda/bin:$PATH"
-=======
     # MacPorts Installer addition on 2016-04-06_at_13:54:05: adding an appropriate PATH variable for use with MacPorts.
     export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
     # Finished adapting your PATH environment variable for use with MacPorts.
 fi
->>>>>>> e249a33ad0f871f0be4a6aca32253be7ccecc16d
