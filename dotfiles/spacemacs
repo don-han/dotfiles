@@ -48,6 +48,7 @@ values."
 
      python
      scala
+     osx
      ) ;; for dotspacemacs-configuration-layers
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -287,6 +288,11 @@ layers configuration. You are free to put any user code."
   ;; Soft-wrap (wrap by words)
   (global-visual-line-mode t)
 
+  ;; Settings for OS X
+  (when (eq system-type 'darwin)
+    (setq mac-command-modifier 'meta)
+    (setq mac-option-modifier nil))
+
   ;; org-mode
   (setq org-directory (file-name-as-directory "~/Dropbox/org/"))
   (setq gtd-directory (file-name-as-directory "~/Dropbox/gtd/"))
@@ -324,7 +330,9 @@ layers configuration. You are free to put any user code."
     (advice-add 'org-archive-subtree :after 'org-save-all-org-buffers)
     (advice-add 'org-capture :after 'org-save-all-org-buffers)
 
-    (advice-add 'org-agenda :after #'delete-other-windows)
+    ;; Maximize the org agenda frame
+    (setq org-agenda-window-setup 'only-window)
+
     ;; Do not display entries if done
     ;(setq org-agenda-skip-deadline-if-done t)
     ;(setq org-agenda-skip-scheduled-if-done t)
@@ -552,6 +560,7 @@ layers configuration. You are free to put any user code."
   ;; Reserved prefix command for user : SPC o and SPC m o
   (spacemacs/set-leader-keys "oM" 'spacemacs/toggle-maximize-frame)
 
+  ;; general commands
   (spacemacs/set-leader-keys
     "oc" 'don-han/custom-capture
     "ol" 'org-store-link
@@ -579,7 +588,10 @@ layers configuration. You are free to put any user code."
     "op" 'don-han/custom-gtd-project
     "ow" 'don-han/custom-gtd-waiting)
 
-  (spacemacs/set-leader-keys-for-major-mode 'org-mode "oR" 'org-clock-report)
+  ;; org-mode specific commands
+  (spacemacs/set-leader-keys-for-major-mode 'org-mode
+    "oR" 'org-clock-report
+    "iL" 'org-insert-last-stored-link)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will

@@ -1,7 +1,9 @@
 [[ -f ~/.bashrc ]] && source ~/.bashrc
 [[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
+
 [[ -f ~/.profile ]] && source ~/.profile
 [[ -f ~/.profile.local ]] && source ~/.profile.local
+
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 [[ -f ~/.bash_aliases.local ]] && source ~/.bash_aliases.local
 
@@ -16,16 +18,23 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 export EDITOR=vim
 export VISUAL="$EDITOR"
 
-# for gitit
-export PATH="$HOME/Library/Haskell/bin:$PATH"
+## User specific environment and startup programs
+export PATH=$PATH:$HOME/bin
 
-# added by Anaconda2 2.4.1 installer
-export PATH="/Users/donhan/anaconda/bin:$PATH"
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    # for gitit
+    export PATH="$HOME/Library/Haskell/bin:$PATH"
 
-# MacPorts Installer addition on 2016-04-06_at_13:54:05: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
+    # added by Anaconda2 2.4.1 installer
+    export PATH="/Users/donhan/anaconda/bin:$PATH"
 
+<<<<<<< HEAD
 
 # added by Anaconda3 4.1.1 installer
 export PATH="/Users/donhan/anaconda/bin:$PATH"
+=======
+    # MacPorts Installer addition on 2016-04-06_at_13:54:05: adding an appropriate PATH variable for use with MacPorts.
+    export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+    # Finished adapting your PATH environment variable for use with MacPorts.
+fi
+>>>>>>> e249a33ad0f871f0be4a6aca32253be7ccecc16d

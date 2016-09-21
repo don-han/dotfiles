@@ -1,18 +1,24 @@
 ## ALIAS SETTINGS ##
-alias sobash='source ~/.bashrc'
+alias soprof='source ~/.bash_profile'
+alias viprof='vim ~/.bash_profile'
 
 alias vibash='vim ~/.bashrc'
 alias vivim='vim ~/.vimrc'
 alias vial='vim ~/.bash_aliases'
+alias vialloc='vim ~/.bash_aliases.local'
 
 alias vidot='vim ~/repo/dotfiles/dotfiles'
 
-alias ls='ls -GFh'
-#--color=auto'
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    alias l='ls -GFh'
+    #--color=auto'
+elif [[ "$(uname -s)" == "Linux" ]]; then
+    alias l='ls --color=auto'
+fi
 
 alias hidden='ls -ld .*'
 
-alias tmux='tmux -2'        # allows 256 colors for vim to work in tmux
+alias tmuxx='tmux -2'        # allows 256 colors for vim to work in tmux
 
 alias freemacs='pkill -SIGUSR2 Emacs' # unfreeze emacs from hanging
 
@@ -29,9 +35,6 @@ alias branch='git branch'
 alias checkout='git checkout'
 
 # General
-alias df='df -h'
-alias du='du -sh'
-
 alias v='vim'
 
 # Trash
@@ -40,14 +43,3 @@ alias trash='mktrash; mv -t ~/.Trash'
 alias t='trash'
 alias trash-empty='mktrash; rm -r ~/.Trash'
 alias trash-list='mktrash; ls -A ~/.Trash'
-
-# FOR OS X #
-alias soprof='source ~/.bash_profile'
-alias viprof='vim ~/.bash_profile'
-
-# gitit
-alias gi='cd ~/wiki && gitit'
-
-# VERCON 
-alias vc='bash ~/repo/vercon/vercon.sh'
-
