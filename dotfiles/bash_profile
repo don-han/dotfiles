@@ -1,5 +1,7 @@
 [[ -f ~/.bashrc ]] && source ~/.bashrc
 [[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
+[[ -f ~/.profile ]] && source ~/.profile
+[[ -f ~/.profile.local ]] && source ~/.profile.local
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 [[ -f ~/.bash_aliases.local ]] && source ~/.bash_aliases.local
 
@@ -24,3 +26,6 @@ export PATH="/Users/donhan/anaconda/bin:$PATH"
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+
+# added by Anaconda3 4.1.1 installer
+export PATH="/Users/donhan/anaconda/bin:$PATH"
