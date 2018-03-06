@@ -8,6 +8,7 @@ alias vial='vim ~/.bash_aliases'
 alias vialloc='vim ~/.bash_aliases.local'
 
 alias vidot='vim ~/repo/dotfiles/dotfiles'
+alias cddot='cd ~/repo/dotfiles/dotfiles'
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
     alias l='ls -GFh'
@@ -23,16 +24,21 @@ alias tmuxx='tmux -2'        # allows 256 colors for vim to work in tmux
 alias freemacs='pkill -SIGUSR2 Emacs' # unfreeze emacs from hanging
 
 # notes
-alias n='vim ~/Dropbox/.note'
+alias nn='vim ~/Dropbox/.note'
+alias cn='cat ~/Dropbox/.note'
 alias notes='cd ~/Dropbox/notes/'
 
 # GIT
 alias g='git'
-alias add='git add'
-alias commit='git commit'
+alias ga='git add'
+alias gc='git commit'
 alias st='git status'
-alias branch='git branch'
-alias checkout='git checkout'
+alias gb='git branch'
+alias gco='git checkout'
+alias gm='git merge'
+alias gp="git pull"
+
+alias gclean=git-clean
 
 # General
 alias v='vim'
@@ -43,3 +49,14 @@ alias trash='mktrash; mv -t ~/.Trash'
 alias t='trash'
 alias trash-empty='mktrash; rm -r ~/.Trash'
 alias trash-list='mktrash; ls -A ~/.Trash'
+
+# JAVA
+alias find-class=find-class
+
+## Bash Functions
+function git-clean {
+    git branch --merged master | grep -v 'master$' | xargs git branch -d
+}
+function find-class {
+    find . -name '*.jar' -exec grep -Hls $1 {} \;
+}

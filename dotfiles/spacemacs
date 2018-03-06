@@ -301,6 +301,7 @@ layers configuration. You are free to put any user code."
 
   ;; gtd files
   (setq org-gtd-file (expand-file-name "gtd.org" gtd-directory))
+  (setq org-work-file (expand-file-name "work.org" work-directory))
   (setq org-archive-file (concat org-gtd-file "_archive"))
   (setq org-calendar-file (expand-file-name "calendar.org" gtd-directory))
   (setq org-someday-file (expand-file-name "someday.org" gtd-directory))
@@ -368,7 +369,11 @@ layers configuration. You are free to put any user code."
           '(
             ("c" "Capture anything to Inbox"
              entry (file+headline org-gtd-file "Inbox")
-             "* %?\nAdded: %U ")
+             "* %?")
+
+            ("w" "Capture anything to Inbox"
+             entry (file+headline org-work-file "Inbox")
+             "* %?")
 
             ("j" "Write a journal entry"
              entry (file+datetree org-journal-file)
@@ -493,7 +498,6 @@ layers configuration. You are free to put any user code."
 
     (when (file-exists-p "~/my-settings.el")
       (load-file "~/my-settings.el"))
-
     )
 
   ;; Used by LaTeX layer to perform full-document previews
@@ -553,6 +557,10 @@ layers configuration. You are free to put any user code."
     (interactive)
     (org-capture nil "c"))
   
+  (defun don-han/work-capture()
+    (interactive)
+    (org-capture nil "w"))
+
   (defun don-han/journal-capture()
     (interactive)
     (org-capture nil "j"))
@@ -563,6 +571,7 @@ layers configuration. You are free to put any user code."
   ;; general commands
   (spacemacs/set-leader-keys
     "oc" 'don-han/custom-capture
+    "ow" 'don-han/work-capture
     "ol" 'org-store-link
     "oj" 'don-han/journal-capture
     )
@@ -584,9 +593,9 @@ layers configuration. You are free to put any user code."
     "oa" 'org-agenda
     "or" 'don-han/custom-gtd-review
 
-    "ot" 'don-han/custom-gtd-todo
-    "op" 'don-han/custom-gtd-project
-    "ow" 'don-han/custom-gtd-waiting)
+    ;;"olt" 'don-han/custom-gtd-todo
+    ;;"olp" 'don-han/custom-gtd-project
+    ;;"olw" 'don-han/custom-gtd-waiting)
 
   ;; org-mode specific commands
   (spacemacs/set-leader-keys-for-major-mode 'org-mode

@@ -8,3 +8,6 @@ dotfiles/vim/backup/*
 dotfiles/vim/swap/*
 dotfiles/vim/undo/*
 dotfiles/vim/vim
+dotfiles/gitconfig
+
+
