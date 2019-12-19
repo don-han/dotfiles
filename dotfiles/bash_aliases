@@ -17,17 +17,6 @@ elif [[ "$(uname -s)" == "Linux" ]]; then
     alias l='ls --color=auto'
 fi
 
-alias hidden='ls -ld .*'
-
-alias tmuxx='tmux -2'        # allows 256 colors for vim to work in tmux
-
-alias freemacs='pkill -SIGUSR2 Emacs' # unfreeze emacs from hanging
-
-# notes
-alias nn='vim ~/Dropbox/.note'
-alias cn='cat ~/Dropbox/.note'
-alias notes='cd ~/Dropbox/notes/'
-
 # GIT
 alias g='git'
 alias ga='git add'
@@ -50,13 +39,8 @@ alias t='trash'
 alias trash-empty='mktrash; rm -r ~/.Trash'
 alias trash-list='mktrash; ls -A ~/.Trash'
 
-# JAVA
-alias find-class=find-class
-
 ## Bash Functions
 function git-clean {
     git branch --merged master | grep -v 'master$' | xargs git branch -d
 }
-function find-class {
-    find . -name '*.jar' -exec grep -Hls $1 {} \;
-}
+
